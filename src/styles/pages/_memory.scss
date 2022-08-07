@@ -1,0 +1,66 @@
+.memory {
+  margin-top: 6rem;
+  &__card {
+    justify-self: center;
+    margin: 0 auto;
+    display: flex;
+    padding: 1rem;
+    height: 85vh;
+    width: 80vw;
+    &__fig {
+      width: 100%;
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      & img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &__caption {
+      max-width: 80%;
+      min-width: 70%;
+      text-align: center;
+      font-weight: 500;
+      border-radius: 10px;
+      background-color: white;
+      padding: 10px 5px;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  &__desc {
+    font-size: 1.2rem;
+    margin: 1.8rem;
+    line-height: 1.6rem;
+    // text-indent: 50px;
+    text-align: center;
+    text-justify: newspaper;
+    margin-bottom: 4rem;
+  }
+
+  &__picture {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+    @media (max-width: 40em) {
+      justify-content: center;
+    }
+  }
+  &__tag {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    & > span {
+      color: $primary;
+    }
+  }
+}

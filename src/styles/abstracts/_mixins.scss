@@ -1,0 +1,44 @@
+@use "sass:math";
+@mixin super-centered {
+  display: grid;
+  place-items: center;
+}
+
+@mixin hello {
+  font-size: 10rem;
+}
+
+@mixin hover-tooltip($content) {
+  position: absolute;
+  top: -30%;
+  left: 0%;
+  content: $content;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 100;
+  color: white;
+  width: 5rem;
+  height: 3rem;
+  // background-color: rgb(115, 94, 211);
+  background-color: rgba(
+    math.random(255),
+    math.random(255),
+    math.random(255),
+    0.9
+  );
+  clip-path: polygon(
+    0% 0%,
+    // Top left point
+    100% 0%,
+    // Top right point
+    100% calc(100% - 10px),
+    // Bottom right point
+    calc(50% + 10px) calc(100% - 10px),
+    // Center right of the triangle
+    50% 100%,
+    // Tip of the triangle
+    calc(50% - 10px) calc(100% - 10px),
+    // Center left of the triangle
+    0% calc(100% - 10px) // Bottom left point
+  );
+}

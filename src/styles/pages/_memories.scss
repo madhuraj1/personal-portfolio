@@ -1,0 +1,49 @@
+.memories {
+  margin-top: 4rem;
+  overflow: auto;
+  &__heading {
+    margin-top: 4rem;
+    font-size: 3rem;
+    text-align: center;
+    letter-spacing: 30px;
+    color: $primary;
+    margin-bottom: 2rem;
+    & span {
+      color: initial;
+      font-size: 2rem;
+    }
+  }
+  &__desc {
+    font-size: 1.2rem;
+    margin: 1.8rem;
+    line-height: 1.6rem;
+    // text-indent: 50px;
+    text-align: center;
+    text-justify: newspaper;
+    margin-bottom: 4rem;
+  }
+  &__picturecont {
+    // display: grid;
+    // place-items: center;
+  }
+  &__picture {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+    @media (max-width: 40em) {
+      justify-content: center;
+    }
+  }
+}
+
+.smemory {
+  margin-top: 10rem;
+  &__large {
+    width: 100vw;
+    height: 20rem;
+  }
+}

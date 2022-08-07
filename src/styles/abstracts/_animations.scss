@@ -1,0 +1,190 @@
+@use "sass:math";
+@keyframes move-around-1 {
+    0%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    10%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+
+    30%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    60%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    80%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    100%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+}
+@keyframes move-around-4 {
+    0%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    10%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+
+    30%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    60%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    80%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    100%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+}
+@keyframes move-around-3 {
+    0%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    10%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+
+    30%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    60%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    80%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    100%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+}
+@keyframes move-around-2 {
+    0%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    10%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+
+    30%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    60%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    80%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    100%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+}
+@keyframes move-around-5 {
+    0%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    10%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+
+    30%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    60%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    80%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    100%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+}
+@keyframes move-around-6 {
+    0%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    10%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+
+    30%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    60%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    80%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    100%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+}
+@keyframes move-around-7 {
+    0%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    10%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+
+    30%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    60%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    80%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+    100%{
+        left: math.percentage( math.random());
+        top: math.percentage( math.random());
+    }
+}
