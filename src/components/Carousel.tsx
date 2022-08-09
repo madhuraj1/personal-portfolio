@@ -1,13 +1,13 @@
 import { useQuery } from "@apollo/client";
 import React, { useEffect, useState } from "react";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
-import { query } from "../schema/about.query";
+import { Carouselquery } from "../schema/Carousel.query";
 import { Data } from "../types/components/carousel.types";
 import { Spinner } from "./Spinner";
 export const Carousel = () => {
   const [activeCard, setActiveCard] = useState(0);
   const [totalCard, setTotalCard] = useState<any>(0);
-  const { data, loading, error } = useQuery<Data>(query);
+  const { data, loading, error } = useQuery<Data>(Carouselquery);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -37,9 +37,7 @@ export const Carousel = () => {
     }
   };
   React.useEffect(() => {
-    setTotalCard(
-      (data?.slideshowCollection.items.length as any) - 1 === undefined
-    );
+    setTotalCard((data?.slideshowCollection.items.length as any) - 1);
   }, [data]);
 
   return (
@@ -57,6 +55,7 @@ export const Carousel = () => {
               <div className="carousel__item" style={style}>
                 <div>
                   <img
+                    loading="lazy"
                     className="carousel__item__image"
                     src={D.imageBase64.url}
                   />

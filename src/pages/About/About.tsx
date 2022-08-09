@@ -2,12 +2,13 @@ import { useQuery } from "@apollo/client";
 import React, { Profiler } from "react";
 import profile from "../../assets/image.png";
 import { Footer } from "../../layout/Footer";
-import { query } from "../../schema/about.query";
+import { Aboutquery } from "../../schema/about.query";
+import { Data } from "../../types/pages/About.types";
 export const About = () => {
-  const { data } = useQuery(query);
+  const { data } = useQuery<Data>(Aboutquery);
 
   React.useEffect(() => {
-    console.log(data);
+    console.log(data?.aboutCollection.items[0].name);
   }, [data]);
 
   return (
@@ -35,6 +36,7 @@ export const About = () => {
           </div>
         </div>
       </div>
+      <img src="" />
       <Footer />
     </>
   );

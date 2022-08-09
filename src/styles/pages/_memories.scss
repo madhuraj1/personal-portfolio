@@ -8,9 +8,17 @@
     letter-spacing: 30px;
     color: $primary;
     margin-bottom: 2rem;
+
+    @media (max-width: 37.6em) {
+      letter-spacing: 10px;
+      font-size: 2rem;
+    }
     & span {
       color: initial;
       font-size: 2rem;
+      @media (max-width: 37.6em) {
+        font-size: 1rem;
+      }
     }
   }
   &__desc {

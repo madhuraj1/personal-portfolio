@@ -7,6 +7,9 @@
     padding: 1rem;
     height: 85vh;
     width: 80vw;
+    @media (max-width: 37.5rem) {
+      height: 50vh;
+    }
     &__fig {
       width: 100%;
       position: relative;
