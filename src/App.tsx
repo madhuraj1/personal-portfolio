@@ -10,15 +10,13 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/memories" element={<Memories />}></Route>
-          <Route path="memories/:id" element={<Memory />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/memories" element={<Memories />}></Route>
+        <Route path="memories/:id" element={<Memory />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+      </Routes>
     </div>
   );
 }
