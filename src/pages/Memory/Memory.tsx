@@ -1,6 +1,6 @@
-import { MemoryCard } from "../components/MemeoryCard";
-import sm from "../assets/sm.png";
-import lg from "../assets/21.png";
+import { MemoryCard } from "../../components/MemeoryCard";
+import sm from "../../assets/sm.png";
+import lg from "../../assets/21.png";
 
 export const Memory = () => {
   return (

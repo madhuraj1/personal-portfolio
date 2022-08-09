@@ -21,9 +21,13 @@
 @import "./pages/homepage";
 @import "./pages/memories";
 @import "./pages/memory";
+@import "./pages/about";
+@import "./pages/contact";
 
 // ##################################################
 // ## COMPONENTS #########################################
 @import "./components/carousel";
 @import "./components/quote";
 @import "./components/memoriesCard";
+@import "./components/footer";
+@import "./components/spinner";

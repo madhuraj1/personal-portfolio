@@ -1,8 +1,13 @@
 import React from "react";
-import { MemoriesCard } from "../components/MemoriesCard";
-import sm from "../assets/sm.png";
-import lg from "../assets/21.png";
+import { MemoriesCard } from "../../components/MemoriesCard";
+import sm from "../../assets/sm.png";
+import lg from "../../assets/21.png";
+import { useQuery } from "@apollo/client";
+import { MemoryQuery } from "../../schema/Memories.query";
+import { Memory } from "../../types/pages/Memories.types";
 export const Memories = () => {
+  const { data } = useQuery<Memory>(MemoryQuery);
+
   return (
     <div className="memories">
       <h1 className="memories__heading">

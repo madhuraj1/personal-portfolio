@@ -37,6 +37,7 @@ export const Navbar = () => {
             </li>
           </ul>
         </div>
+        <div></div>
         <div className="navbar__content active">
           <img className="navbar__logo" src={Logo} />
           <div className="navbar__tag">Madhuraj Photography</div>
@@ -45,6 +46,9 @@ export const Navbar = () => {
           src={bulletedlist}
           onClick={() => {
             setisActive(!isactive);
+          }}
+          style={{
+            opacity: 0.6,
           }}
           className="navbar__icon"
         />

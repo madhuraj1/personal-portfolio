@@ -9,8 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.9",
     "axios": "^0.27.2",
     "contentful": "^9.1.33",
+    "graphql": "^16.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",

@@ -4,14 +4,20 @@
   display: flex;
   flex-direction: row;
   padding-top: 1rem;
-  min-height: 100vh;
+  // min-height: 100vh;
+
+  &__spinner {
+    min-height: 50vh;
+    margin: auto;
+  }
   &__item {
     flex-shrink: 0;
     width: 100%;
-    height: 70%;
+    height: 75vh;
     transition: all 0.4s;
     padding: 0rem 4rem;
-
+    object-fit: cover;
+    margin-bottom: 3rem;
     &__image {
       width: 100%;
       height: 100%;
@@ -46,24 +52,50 @@
     }
   }
 
+  &__controls {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-bottom: 3rem;
+    &_btn {
+      margin: 0 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  &__separator {
+    width: 92vw;
+    height: 0.5px;
+    margin: 0 auto;
+    background-color: rgb(126, 123, 123);
+    margin-bottom: 2rem;
+  }
   &__controls--left {
-    position: absolute;
-    left: 5rem;
-    top: 50%;
-
-    transform: translateY(-50%);
-    color: white;
+    // position: absolute;
+    // left: 5rem;
+    // top: 50%;
+    display: flex;
+    align-items: center;
+    // transform: translateY(-50%);
+    color: rgb(0, 0, 0);
     font-size: 2rem;
     border-radius: 50%;
+    & > span {
+      font-size: 1rem;
+      color: rgba($color: #000000, $alpha: 0.6);
+    }
   }
   &__controls--right {
-    position: absolute;
+    display: flex;
+    align-items: center;
     font-size: 2rem;
-    right: 5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
+    color: rgb(0, 0, 0);
     border-radius: 50%;
+    & > span {
+      font-size: 1rem;
+      color: rgba($color: #000000, $alpha: 0.6);
+    }
   }
 }
 @keyframes hideToMove {
