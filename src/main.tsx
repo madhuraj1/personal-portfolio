@@ -6,12 +6,10 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { BrowserRouter } from "react-router-dom";
 
 const client = new ApolloClient({
-  uri: `https://graphql.contentful.com/content/v1/spaces/${
-    import.meta.env.VITE_SPACE_ID
-  }`,
+  uri: "https://graphql.contentful.com/content/v1/spaces/yz4pf1fjgwd1",
   cache: new InMemoryCache(),
   headers: {
-    Authorization: `Bearer ${import.meta.env.VITE_ACCESS_TOKEN}`,
+    Authorization: `Bearer f6Zt3Dm2UHZZWqHMBkv0M2hZFRt3kS8Dlk05Qu6yAR4`,
   },
 });
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
