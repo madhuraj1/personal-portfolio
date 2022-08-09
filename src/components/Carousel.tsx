@@ -37,7 +37,9 @@ export const Carousel = () => {
     }
   };
   React.useEffect(() => {
-    setTotalCard(data?.slideshowCollection.items.length - 1);
+    setTotalCard(
+      (data?.slideshowCollection.items.length as any) - 1 === undefined
+    );
   }, [data]);
 
   return (
