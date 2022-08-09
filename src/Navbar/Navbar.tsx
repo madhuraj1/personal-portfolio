@@ -1,14 +1,16 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Logo from "../assets/brown.png";
 import bulletedlist from "../assets/bulletedlist.svg";
 export const Navbar = () => {
   const [isactive, setisActive] = useState<boolean>(false);
+  const router = useNavigate();
   return (
     <>
       <div className="navbar">
         <div className={`navbar__menu ${isactive && "active"}`}>
           <ul>
-            <li className="navbar__menuoptions">
+            <li className="navbar__menuoptions" onClick={() => router("/")}>
               <span>
                 <img
                   className="navbar__menuoptions-icon"
@@ -17,7 +19,10 @@ export const Navbar = () => {
               </span>
               Home
             </li>
-            <li className="navbar__menuoptions">
+            <li
+              className="navbar__menuoptions"
+              onClick={() => router("/memories")}
+            >
               <span>
                 <img
                   className="navbar__menuoptions-icon"
@@ -26,7 +31,10 @@ export const Navbar = () => {
               </span>
               Memories
             </li>
-            <li className="navbar__menuoptions">
+            <li
+              className="navbar__menuoptions"
+              onClick={() => router("/about")}
+            >
               <span>
                 <img
                   className="navbar__menuoptions-icon"
