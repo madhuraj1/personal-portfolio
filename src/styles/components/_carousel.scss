@@ -15,7 +15,7 @@
     width: 100%;
     height: 75vh;
     transition: all 0.4s;
-    // padding: 0rem 4rem;
+    padding: 0rem 4rem;
     object-fit: cover;
     margin-bottom: 3rem;
     @media (max-width: 37.5em) {
@@ -24,7 +24,7 @@
     &__image {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
 
     & > div {
@@ -38,7 +38,7 @@
       align-items: center;
       width: 100%;
       height: 100%;
-      background-color: rgb(101, 120, 218);
+      // background-color: rgb(101, 120, 218);
       color: white;
       position: relative;
     }
@@ -147,3 +147,46 @@
 }
 
 // 2 https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/72FF1160F04E32A65899BB07A3A6AC58A06783E9806D82D95966D3745DF4EC70/scale?width=1440&aspectRatio=3.91
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.swiper-wrapper {
+}
+.swiper-slide img {
+  display: block;
+  width: 90vw;
+  height: 80vh;
+  object-fit: contain;
+  border-radius: 10px;
+
+  @media (max-width: 37.5em) {
+    // height: 60vw;
+    width: 100vw;
+  }
+}
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+}

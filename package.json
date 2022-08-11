@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "dev-expose":"vite --host",
+    "dev-expose": "vite --host",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
@@ -18,7 +18,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
-    "sass": "^1.54.3"
+    "sass": "^1.54.3",
+    "swiper": "^8.3.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.15",

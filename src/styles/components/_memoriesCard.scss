@@ -11,7 +11,7 @@
     width: 33.3333%;
   }
   @media (min-width: 90rem) {
-    width: 25%;
+    width: 50%;
   }
   @media (min-width: 150em) {
     width: 20%;
@@ -20,7 +20,9 @@
     position: relative;
     border-radius: 10px;
     overflow: hidden;
-
+    @media (min-width: 56em) {
+      width: 100%;
+    }
     @media (min-width: 106em) {
       width: 100%;
     }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../assets/brown.png";
-import bulletedlist from "../assets/bulletedlist.svg";
+import bulletedlist from "../assets/hamburger-menu.svg";
 import About from "../assets/About.svg";
 import memory from "../assets/memories.svg";
 import Home from "../assets/home.svg";
@@ -16,49 +16,87 @@ export const Navbar = () => {
   return (
     <>
       <div className="navbar">
-        <div className={`navbar__menu ${isactive && "active"}`}>
+        {/* <div classNameName={`navbar__menu ${isactive && "active"}`}>
           <ul>
-            <li className="navbar__menuoptions" onClick={() => onclick("/")}>
+            <li classNameName="navbar__menuoptions" onClick={() => onclick("/")}>
               <span>
-                <img className="navbar__menuoptions-icon" src={Home}></img>
+                <img classNameName="navbar__menuoptions-icon" src={Home}></img>
               </span>
               Home
             </li>
             <li
-              className="navbar__menuoptions"
+              classNameName="navbar__menuoptions"
               onClick={() => onclick("/memories")}
             >
               <span>
-                <img className="navbar__menuoptions-icon" src={memory}></img>
+                <img classNameName="navbar__menuoptions-icon" src={memory}></img>
               </span>
               Memories
             </li>
             <li
-              className="navbar__menuoptions"
+              classNameName="navbar__menuoptions"
               onClick={() => onclick("/about")}
             >
               <span>
-                <img className="navbar__menuoptions-icon" src={About}></img>
+                <img classNameName="navbar__menuoptions-icon" src={About}></img>
               </span>
               About
             </li>
             <li
-              className="navbar__menuoptions"
+              classNameName="navbar__menuoptions"
               onClick={() => onclick("/about")}
             >
               <span>
-                <img className="navbar__menuoptions-icon" src={contact}></img>
+                <img classNameName="navbar__menuoptions-icon" src={contact}></img>
               </span>
               Contact
             </li>
           </ul>
+        </div> */}
+        <div>
+          <input
+            className="navbar__input"
+            type="checkbox"
+            id="navcheck"
+            role="button"
+            title="menu"
+            checked={isactive}
+            onChange={(e) => setisActive(e.target.checked)}
+          />
+          <label
+            className="navbar__label"
+            htmlFor="navcheck"
+            aria-hidden="true"
+            title="menu"
+          >
+            <span className="burger">
+              <span className="bar">
+                <span className="visuallyhidden">Menu</span>
+              </span>
+            </span>
+          </label>
+          <nav className="navbar__nav" id="menu">
+            <a className="navbar__links" onClick={() => onclick("/")}>
+              Home
+            </a>
+            <a className="navbar__links" onClick={() => onclick("/memories")}>
+              Memories
+            </a>
+            <a className="navbar__links" onClick={() => onclick("/about")}>
+              About
+            </a>
+            <a className="navbar__links" href="#">
+              Cinematography
+            </a>
+            <a className="navbar__links" href="#">
+              About
+            </a>
+            <a className="navbar__links" href="#">
+              Contact
+            </a>
+          </nav>
         </div>
-        <div></div>
-        <div className="navbar__content active">
-          <img className="navbar__logo" src={Logo} />
-          <div className="navbar__tag">Madhuraj Photography</div>
-        </div>
-        <img
+        {/* <img
           src={bulletedlist}
           onClick={() => {
             setisActive(!isactive);
@@ -67,21 +105,26 @@ export const Navbar = () => {
             opacity: 0.6,
           }}
           className="navbar__icon"
-        />
-        {/* <div className="nav-right visible-xs">
-          <div className="button active" id="btn">
-            <div className="bar top"></div>
-            <div className="bar middle"></div>
-            <div className="bar bottom"></div>
+        /> */}
+        <div className="navbar__content active">
+          <img className="navbar__logo" src={Logo} />
+          <div className="navbar__tag">Madhuraj Photography</div>
+        </div>
+        <div></div>
+        {/* <div classNameName="nav-right visible-xs">
+          <div classNameName="button active" id="btn">
+            <div classNameName="bar top"></div>
+            <div classNameName="bar middle"></div>
+            <div classNameName="bar bottom"></div>
           </div>
         </div>
         <main>
           <nav>
-            <div className="nav-right hidden-xs">
-              <div className="button active" id="btn">
-                <div className="bar top"></div>
-                <div className="bar middle"></div>
-                <div className="bar bottom"></div>
+            <div classNameName="nav-right hidden-xs">
+              <div classNameName="button active" id="btn">
+                <div classNameName="bar top"></div>
+                <div classNameName="bar middle"></div>
+                <div classNameName="bar bottom"></div>
               </div>
             </div>
           </nav>
