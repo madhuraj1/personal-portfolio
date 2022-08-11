@@ -58,6 +58,7 @@ export const Carousel = () => {
                     loading="lazy"
                     className="carousel__item__image"
                     src={D.imageBase64.url}
+                    alt="Madhuraj Photography",
                   />
                 </div>
               </div>
