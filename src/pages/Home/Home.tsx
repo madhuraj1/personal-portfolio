@@ -10,11 +10,11 @@ export const Home = () => {
   return (
     <main>
       <div className="quote">
-        {/* <img src={lq} className="quote__lq" />
+        <img src={lq} className="quote__lq" />
         {data?.quoteCollection.items[0].quote.slice(0, 15)}
         <span>{data?.quoteCollection.items[0].quote.slice(15)}</span>
-        <img className="quote__rq" src={rq} /> */}
-        <div className="container">
+        <img className="quote__rq" src={rq} />
+        {/* <div className="container">
           <div className="box">
             <div className="title">
               <span className="block"></span>
@@ -29,16 +29,6 @@ export const Home = () => {
             <div className="block"></div>
             <p></p>
           </div>
-        </div>
-        {/* <div className="escape">
-          {data?.quoteCollection.items[0].quote.split(" ")[0]}
-        </div>
-        <div className="escape1">
-          <span className="something">
-            {data?.quoteCollection.items[0].quote.slice(
-              data?.quoteCollection.items[0].quote.split(" ")[0].length + 1
-            )}
-          </span>
         </div> */}
       </div>
 

@@ -1,0 +1,58 @@
+.films {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 1440px;
+  margin: 10rem auto;
+  &__heading {
+    font-size: 4rem;
+    font-weight: 600;
+    color: $primary;
+    margin-bottom: 1rem;
+    letter-spacing: 22px;
+  }
+  &__desc {
+    color: rgb(111, 111, 111);
+    padding: 0 4rem;
+    text-align: center;
+    line-height: 23px;
+    margin-bottom: 3rem;
+    @media (max-width: 39.5em) {
+      padding: 0 5px;
+    }
+  }
+  &__vid {
+    width: 80%;
+    @media (max-width: 61em) {
+      width: 98%;
+    }
+  }
+  &__fw {
+    width: 100%;
+    & > .films__videocontainer {
+      & > iframe {
+        width: 100%;
+        height: 40rem;
+        @media (max-width: 39.5em) {
+          height: 20rem;
+        }
+      }
+    }
+  }
+  &__hw {
+    & > .films__videocontainer {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      @media (max-width: 39.5em) {
+        display: block;
+      }
+      & > iframe {
+        width: 100%;
+        height: 20rem;
+      }
+    }
+  }
+}

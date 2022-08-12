@@ -58,6 +58,7 @@ export const Carousel = () => {
         pagination={{
           clickable: true,
         }}
+        autoplay={true}
         navigation={true}
         modules={[Pagination, Navigation]}
         className="swiper"

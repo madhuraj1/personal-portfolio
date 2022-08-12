@@ -6,6 +6,7 @@ import { Home } from "./pages/Home/Home";
 import { Memory } from "./pages/Memory/Memory";
 import { About } from "./pages/About/About";
 import { Contact } from "./pages/Contact/Contact";
+import { Cinematography } from "./pages/Cinematography/Cinematography";
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
         <Route path="memories/:id" element={<Memory />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="cinematography" element={<Cinematography />} />
       </Routes>
     </div>
   );

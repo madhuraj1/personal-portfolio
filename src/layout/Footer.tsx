@@ -16,7 +16,7 @@ export const Footer = () => {
         <SiGmail color="" />
       </div>
       <div className="footer__separator"></div>
-      <div className="footer__copyright">c My name, Managalore 2022</div>
+      <div className="footer__copyright">c Madhuraj Photography 2022</div>
     </div>
   );
 };
