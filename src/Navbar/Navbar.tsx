@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Logo from "../assets/brown.png";
-import bulletedlist from "../assets/hamburger-menu.svg";
-import About from "../assets/About.svg";
-import memory from "../assets/memories.svg";
-import Home from "../assets/home.svg";
-import contact from "../assets/About.svg";
+
 export const Navbar = () => {
   const [isactive, setisActive] = useState<boolean>(false);
   const router = useNavigate();
