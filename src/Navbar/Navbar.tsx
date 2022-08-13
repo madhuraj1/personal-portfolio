@@ -6,7 +6,6 @@ export const Navbar = () => {
   const [isactive, setisActive] = useState<boolean>(false);
   const router = useNavigate();
   const loc = useLocation();
-  console.log(loc);
 
   const onclick = (path: string) => {
     setisActive(false);
@@ -56,7 +55,7 @@ export const Navbar = () => {
               Memories
             </a>
             <a
-              style={style("cinematography")}
+              style={style("/cinematography")}
               className="navbar__links"
               onClick={() => onclick("/cinematography")}
             >
@@ -80,7 +79,10 @@ export const Navbar = () => {
           </nav>
         </div>
         <div className="navbar__content active">
-          <img className="navbar__logo" src={Logo} />
+          <div className="navbar__logo">
+            <img src={Logo} />
+          </div>
+
           <div className="navbar__tag">Madhuraj Photography</div>
         </div>
         <div></div>

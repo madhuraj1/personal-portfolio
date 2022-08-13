@@ -3,12 +3,12 @@ import { MemoriesCard } from "../../components/MemoriesCard";
 import sm from "../../assets/sm.png";
 import lg from "../../assets/21.png";
 import { useQuery } from "@apollo/client";
-import { MemoryQuery } from "../../schema/Memories.query";
+import { MemoryQuery } from "../../schema/Query";
 import { Memory } from "../../types/pages/Memories.types";
-import { Footer } from "../../layout/Footer";
 import { MinimalFooter } from "../../layout/MinimalFooter";
+import { Spinner } from "../../components/Spinner";
 export const Memories = () => {
-  const { data } = useQuery<Memory>(MemoryQuery);
+  const { data, loading } = useQuery<Memory>(MemoryQuery);
 
   return (
     <>
@@ -26,15 +26,20 @@ export const Memories = () => {
           erat commodo viverra. Nullam convallis tellus at interdum egestas.
           Duis efficitur maximus dignissim.
         </div>
-        <ul className="memories__picture">
-          <MemoriesCard image={sm} />
-          <MemoriesCard image={lg} />
-          <MemoriesCard image={lg} />
-          <MemoriesCard image={sm} />
-          <MemoriesCard image={lg} />
-          <MemoriesCard image={sm} />
-          <MemoriesCard image={sm} />
-        </ul>
+        {loading && <Spinner />}
+        {!loading && (
+          <ul className="memories__picture">
+            {data?.memoriesCollection.items.map((coll, index) => {
+              return (
+                <MemoriesCard
+                  key={index}
+                  data={coll}
+                  image={coll.coverImage.url}
+                />
+              );
+            })}
+          </ul>
+        )}
       </div>
       <MinimalFooter />
     </>

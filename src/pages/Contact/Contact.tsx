@@ -7,8 +7,17 @@ import shape from "../../assets/shape.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { MinimalFooter } from "../../layout/MinimalFooter";
+import { useQuery } from "@apollo/client";
+import { contactQuery } from "../../schema/Query";
+import { IContact } from "../../types/pages/Contact.types";
 
 export const Contact = () => {
+  const { data } = useQuery<IContact>(contactQuery);
+
+  React.useEffect(() => {
+    console.log(data?.contactCollection.items[0]);
+  }, [data]);
+
   const [contact, setContact] = useState({
     name: "",
     email: "",
@@ -63,32 +72,38 @@ export const Contact = () => {
             <div className="info">
               <div className="information">
                 <img src={location} className="icon" alt="" />
-                <p>92 Cherry Drive Uniondale, NY 11553</p>
+                <p>{data?.contactCollection.items[0].address}</p>
               </div>
               <div className="information">
                 <img src={email} className="icon" alt="" />
-                <p>lorem@ipsum.com</p>
+                <p>{data?.contactCollection.items[0].email}</p>
               </div>
               <div className="information">
                 <img src={phone} className="icon" alt="" />
-                <p>123-456-789</p>
+                <p>{data?.contactCollection.items[0].number}</p>
               </div>
             </div>
 
             <div className="social-media">
               <p>Connect with us :</p>
               <div className="social-icons">
-                <a href="#">
+                <a href={data?.contactCollection.items[0].instagram}>
                   <SiFacebook />
                 </a>
                 <a href="#">
-                  <SiTwitter />
+                  <SiTwitter
+                    href={data?.contactCollection.items[0].instagram}
+                  />
                 </a>
                 <a href="#">
-                  <SiInstagram />
+                  <SiInstagram
+                    href={data?.contactCollection.items[0].instagram}
+                  />
                 </a>
                 <a href="#">
-                  <SiBehance />
+                  <SiBehance
+                    href={data?.contactCollection.items[0].instagram}
+                  />
                 </a>
               </div>
             </div>

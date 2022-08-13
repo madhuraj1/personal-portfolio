@@ -1,7 +1,13 @@
+import { useQuery } from "@apollo/client";
 import React from "react";
+import { Spinner } from "../../components/Spinner";
 import { MinimalFooter } from "../../layout/MinimalFooter";
+import { cinemaQuery } from "../../schema/Query";
+import { ICinema } from "../../types/pages/Cinema.types";
 
 export const Cinematography = () => {
+  const { data, loading } = useQuery<ICinema>(cinemaQuery);
+
   return (
     <>
       <div className="films">
@@ -13,19 +19,25 @@ export const Cinematography = () => {
           your story is painted in our galleries. Say Cheese wedding films is
           one cherished work of love.
         </p>
-        <div className="films__vid">
-          <div className="films__fw">
-            <div className="films__videocontainer">
-              <iframe src="https://www.youtube.com/embed/d72vXhJDE6M"></iframe>
-            </div>
+        {loading && <Spinner />}
+        {!loading && (
+          <div className="films__vid">
+            <>
+              <div className="films__fw">
+                <div className="films__videocontainer">
+                  <iframe src="https://www.youtube.com/embed/d72vXhJDE6M"></iframe>
+                </div>
+              </div>
+              <div className="films__hw">
+                <div className="films__videocontainer">
+                  <iframe src="https://www.youtube.com/embed/d72vXhJDE6M"></iframe>
+                  <iframe src="https://www.youtube.com/embed/d72vXhJDE6M"></iframe>
+                </div>
+              </div>{" "}
+            </>
+            );
           </div>
-          <div className="films__hw">
-            <div className="films__videocontainer">
-              <iframe src="https://www.youtube.com/embed/d72vXhJDE6M"></iframe>
-              <iframe src="https://www.youtube.com/embed/d72vXhJDE6M"></iframe>
-            </div>
-          </div>
-        </div>
+        )}
       </div>
       <MinimalFooter />
     </>

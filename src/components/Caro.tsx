@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import { Carouselquery } from "../schema/Carousel.query";
+import { Carouselquery } from "../schema/Query";
 import { Data } from "../types/components/carousel.types";
 import { Spinner } from "./Spinner";
 import { Swiper, SwiperSlide } from "swiper/react";
