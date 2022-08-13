@@ -31,6 +31,7 @@
   &__logo {
     margin-top: 2rem;
     width: 90px;
+    object-fit: fill;
     // height: 9rem;
   }
   &__tag {
@@ -48,14 +49,14 @@
     position: absolute;
     height: 100vh;
     background-color: white;
-    box-shadow: 0 0.5rem 0.5rem black;
+    // box-shadow: 0 0.5rem 0.5rem black;
     padding: 0.8rem 1.5rem;
     transition: all 0.5s;
     top: 0;
     margin-left: -25rem;
     z-index: 99;
     left: 0;
-    box-shadow: 0 0.1rem 0.1rem rgb(70, 69, 69);
+    // box-shadow: 0 0.1rem 0.1rem rgb(70, 69, 69);
     border-radius: 10px;
     display: flex;
     width: 25%;
@@ -169,7 +170,7 @@
     top: 0;
     left: 0;
     bottom: 0;
-    z-index: 51;
+    z-index: 0;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -188,7 +189,7 @@
       background: #ffffff;
       content: "";
       transform: skewX(0deg) translateX(-100%);
-      box-shadow: 0 1rem 2rem rgb(128, 128, 128);
+
       // transform-origin: bottom left;
       // will-change: transform;
 
@@ -224,6 +225,16 @@
       font-weight: 600;
     }
   }
+  // [id="navcheck"]:checked {
+  //   .navbar__nav {
+  //     z-index: 0;
+  //   }
+  // }
+  [id="navcheck"]:not(:checked) {
+    .navbar__nav {
+      z-index: -11;
+    }
+  }
   [id="navcheck"]:checked {
     & + .navbar__label {
       &::before {
@@ -248,8 +259,10 @@
     }
     & ~ .navbar__nav {
       transform: translateX(0);
+      z-index: 51;
       &::before {
         transform: skewX(0deg) translateX(0);
+        box-shadow: 0 0.1rem 1rem rgb(128, 128, 128);
       }
       .navbar__links {
         opacity: 1;

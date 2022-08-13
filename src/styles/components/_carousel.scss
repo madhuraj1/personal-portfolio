@@ -151,6 +151,9 @@
 .swiper {
   width: 100%;
   height: 100%;
+  & > &-button-prev {
+    z-index: 200;
+  }
 }
 
 .swiper-slide {
