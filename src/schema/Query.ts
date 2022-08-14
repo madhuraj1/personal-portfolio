@@ -14,7 +14,7 @@ export const Aboutquery = gql`query About{
 }
 `
 export const Carouselquery = gql`query Carousel{
-    slideshowCollection{
+    slideshowCollection(order:order_ASC){
       items{
         imageBase64{
           url

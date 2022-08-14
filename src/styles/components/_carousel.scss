@@ -153,6 +153,10 @@
   height: 100%;
   & > &-button-prev {
     z-index: 200;
+    color: white;
+  }
+  & > &-button-next {
+    color: white;
   }
 }
 

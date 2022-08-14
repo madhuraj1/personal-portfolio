@@ -23,19 +23,15 @@ export const Cinematography = () => {
         {!loading && (
           <div className="films__vid">
             <>
-              <div className="films__fw">
-                <div className="films__videocontainer">
-                  <iframe src="https://www.youtube.com/embed/d72vXhJDE6M"></iframe>
-                </div>
-              </div>
-              <div className="films__hw">
-                <div className="films__videocontainer">
-                  <iframe src="https://www.youtube.com/embed/d72vXhJDE6M"></iframe>
-                  <iframe src="https://www.youtube.com/embed/d72vXhJDE6M"></iframe>
-                </div>
-              </div>{" "}
+              {data?.youtubeLinksCollection.items.map((yt, index) => {
+                return (
+                  <iframe
+                    className="films__vid_items"
+                    src="https://www.youtube.com/embed/d72vXhJDE6M"
+                  ></iframe>
+                );
+              })}
             </>
-            );
           </div>
         )}
       </div>
