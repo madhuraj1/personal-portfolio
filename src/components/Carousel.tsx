@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 import React, { useEffect, useState } from "react";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
-import { Carouselquery } from "../schema/Carousel.query";
+import { Carouselquery } from "../schema/Query";
 import { Data } from "../types/components/carousel.types";
 import { Spinner } from "./Spinner";
 export const Carousel = () => {
