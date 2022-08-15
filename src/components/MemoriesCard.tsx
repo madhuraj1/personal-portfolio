@@ -8,15 +8,16 @@ export const MemoriesCard = (props: {
   data: MemoriesCollectionItem;
 }) => {
   const router = useNavigate();
+
   return (
     <li
       className="memcard"
       onClick={() => {
-        router("/memories/couple", { state: props.data });
+        router(`/memories/${props.data.sys.id}`, { state: props.data.sys.id });
       }}
     >
       <figure className="memcard__fig">
-        <img src={props.image}></img>
+        <img alt={"Madhuraj Photography"} src={props.image}></img>
         <figcaption className="memcard__caption">{props.data.name}</figcaption>
       </figure>
     </li>

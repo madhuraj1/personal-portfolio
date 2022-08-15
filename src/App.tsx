@@ -17,7 +17,7 @@ function App() {
         <Route path="memories/:id" element={<Memory />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
-        <Route path="cinematography" element={<Cinematography />} />
+        <Route path="films" element={<Cinematography />} />
       </Routes>
     </div>
   );

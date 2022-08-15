@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import Logo from "../assets/brown.png";
+import Logo from "../assets/logo.png";
 
 export const Navbar = () => {
-  const [isactive, setisActive] = useState<boolean>(false);
+  const [isactive, setisactive] = useState<boolean>(false);
   const router = useNavigate();
   const loc = useLocation();
 
   const onclick = (path: string) => {
-    setisActive(false);
+    setisactive(false);
     router(path);
   };
   const style = (path: string) => {
@@ -25,7 +25,7 @@ export const Navbar = () => {
             role="button"
             title="menu"
             checked={isactive}
-            onChange={(e) => setisActive(e.target.checked)}
+            onChange={(e) => setisactive(e.target.checked)}
           />
           <label
             className="navbar__label"
@@ -57,9 +57,9 @@ export const Navbar = () => {
             <a
               style={style("/cinematography")}
               className="navbar__links"
-              onClick={() => onclick("/cinematography")}
+              onClick={() => onclick("/films")}
             >
-              Cinematography
+              Films
             </a>
             <a
               style={style("/about")}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { MemoriesCard } from "../../components/MemoriesCard";
 import sm from "../../assets/sm.png";
 import lg from "../../assets/21.png";

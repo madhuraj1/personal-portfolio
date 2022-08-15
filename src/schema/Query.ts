@@ -27,6 +27,9 @@ export const MemoryQuery = gql`
 query Memories{
     memoriesCollection{
       items{
+      sys{
+            id
+        }
         name
         caption
         coverImage{
@@ -72,3 +75,24 @@ query youtubeLinks{
     }
   }
 }`
+
+export const getMemoriesdById = gql`
+query Memories($id:String!){
+    memories(id:$id){
+      sys{
+            id
+        }
+        name
+        caption
+        coverImage{
+          fileName
+          url
+        }
+        memoryCollectionCollection{
+          items{
+            url
+          }
+        }
+      } 
+  }
+`

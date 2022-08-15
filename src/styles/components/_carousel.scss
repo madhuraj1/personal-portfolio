@@ -154,6 +154,8 @@
   & > &-button-prev {
     z-index: 200;
     color: white;
+
+    @m;
   }
   & > &-button-next {
     color: white;
