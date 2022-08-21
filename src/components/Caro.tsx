@@ -16,23 +16,24 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
+import { useState } from "react";
 
 // import "./styles.css";
 
 export const Carousel = () => {
   const { data, loading, error } = useQuery<Data>(Carouselquery);
-
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <>
       <Swiper
-        slidesPerView={1}
+        slidesPerView={"auto"}
         // spaceBetween={30}
         // loop={true}
         allowTouchMove={true}
         // mousewheel={true}
         keyboard={true}
         autoplay={{
-          delay: 2000,
+          delay: 5000,
           stopOnLastSlide: false,
         }}
         spaceBetween={30}
@@ -61,7 +62,7 @@ export const Carousel = () => {
             return (
               <SwiperSlide key={data.order} className="swiper-slide">
                 {/* <div> */}
-                <img  alt={"Madhuraj Photography"} src={data.imageBase64.url} />
+                <img alt={"Madhuraj Photography"} src={data.imageBase64.url} />
                 {/* </div> */}
               </SwiperSlide>
             );

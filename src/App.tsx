@@ -7,6 +7,7 @@ import { Memory } from "./pages/Memory/Memory";
 import { About } from "./pages/About/About";
 import { Contact } from "./pages/Contact/Contact";
 import { Cinematography } from "./pages/Cinematography/Cinematography";
+
 function App() {
   return (
     <div className="App">

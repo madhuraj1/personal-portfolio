@@ -184,9 +184,9 @@
 }
 .swiper-slide img {
   display: block;
-  width: 90vw;
+  // width: 90vw;
   height: 80vh;
-  object-fit: contain;
+  // object-fit: contain;
   border-radius: 10px;
 
   @media (max-width: 37.5em) {
