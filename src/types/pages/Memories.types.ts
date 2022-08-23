@@ -20,6 +20,7 @@ export interface GetMemoryById  {
 export interface CoverImage {
     fileName: string;
     url:      string;
+   
 }
 
 export interface MemoryCollectionCollection {
@@ -28,6 +29,7 @@ export interface MemoryCollectionCollection {
 
 export interface MemoryCollectionCollectionItem {
     url: string;
+    width: string;
 }
 
 

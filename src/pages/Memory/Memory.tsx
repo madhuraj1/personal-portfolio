@@ -28,19 +28,19 @@ export const Memory = () => {
   });
   useEffect(() => {
     if (!loading && !error) {
-      // const le = ref1.current?.children.length ?? 0;
-      // const le2 = ref1.current?.children.length ?? 0;
-      // let h1 = 0;
-      // let h2 = 0;
-      // let last1 = 0;
-      // let last2 = 0;
+      const le = ref1.current?.children.length ?? 0;
+      const le2 = ref1.current?.children.length ?? 0;
+      let h1 = 0;
+      let h2 = 0;
+      let last1 = 0;
+      let last2 = 0;
       // for (last1; last1 < le; last1++) {
       //   h1 = h1 + ref1.current?.children[last1].clientHeight;
       // }
       // for (last2; last2 < le2; last2++) {
       //   h2 = h2 + ref2.current?.children[last2].clientHeight;
       // }
-      // const height = h2 - h1;
+      const height = h2 - h1;
       // const node = document.createElement("img");
       // node.style.width = "100%";
       // node.setAttribute("src", data?.memories.coverImage.url);
@@ -65,13 +65,25 @@ export const Memory = () => {
                 <>
                   <div ref={ref1} className="dream">
                     {myData[0].map((d: any) => {
-                      return <img src={d.url} />;
+                      return (
+                        <img
+                          alt="madhuraj Photography"
+                          loading="lazy"
+                          src={d.url}
+                        />
+                      );
                     })}
                   </div>
 
                   <div ref={ref2} className="dream">
                     {myData[1].map((d: any) => {
-                      return <img src={d.url} />;
+                      return (
+                        <img
+                          alt="madhuraj Photography"
+                          loading="lazy"
+                          src={d.url}
+                        />
+                      );
                     })}
                   </div>
                 </>

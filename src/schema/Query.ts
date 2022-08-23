@@ -91,6 +91,7 @@ query Memories($id:String!){
         memoryCollectionCollection{
           items{
             url
+            height
           }
         }
       } 
