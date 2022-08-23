@@ -1,56 +1,33 @@
-.quote {
-  color: rgba($color: #000000, $alpha: 0.5);
-  font-weight: 400;
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 4rem;
-  margin-top: 7rem;
-  color: rgb(4, 0, 0);
-  font-size: 32px;
-  q {
-    color: rgb(57, 55, 55);
+.home {
+  position: relative;
+  .quote {
+    color: rgba($color: #000000, $alpha: 0.5);
+    font-weight: 400;
+    text-transform: uppercase;
+    position: absolute;
+    width: 100%;
+    top: 10rem;
+    text-align: center;
+    z-index: 55;
+    color: rgb(4, 0, 0);
     font-size: 32px;
-    margin: 0;
-    padding: 0;
-    &:before {
-      content: open-quote;
-      padding-right: 10px;
-      margin: 0;
-      padding: 0;
-    }
 
-    &:after {
-      content: close-quote;
+    q {
+      color: rgb(255, 255, 255);
+      font-size: 32px;
+      font-weight: 800;
       margin: 0;
       padding: 0;
-      color: $primary;
-      padding-left: 10px;
-    }
-    @media (max-width: 37.5em) {
-      &::after,
-      &::before {
-        content: "";
+
+      @media (max-width: 37.5em) {
+        &::after,
+        &::before {
+          content: "";
+        }
+        font-size: 1rem;
+        line-height: 0;
+        text-align: center;
       }
-      font-size: 1rem;
-      line-height: 0;
-      text-align: center;
-    }
-  }
-
-  q > span {
-    // text-decoration: underline;
-    color: rgba($primary, 0.9);
-    font-weight: 800;
-    text-decoration-color: rgb(176, 174, 174);
-  }
-  &__lq,
-  &__rq {
-    width: 3rem;
-    height: 3rem;
-    margin: 0 1rem;
-    @media (max-width: 37.5em) {
-      width: 2rem;
-      height: 2rem;
     }
   }
 }

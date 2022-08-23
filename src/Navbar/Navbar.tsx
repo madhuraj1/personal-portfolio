@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logo.svg";
 
 export const Navbar = () => {
   const [isactive, setisactive] = useState<boolean>(false);
@@ -80,11 +80,19 @@ export const Navbar = () => {
             </nav>
           </div>
           <div className="navbar__content active">
-            <div className="navbar__logo">
-              <img src={Logo} />
-            </div>
-
-            <div className="navbar__tag">Madhuraj Photography</div>
+            <a className="navbar__content-links" href="/home">
+              About
+            </a>
+            <a className="navbar__content-links" href="">
+              Memoried
+            </a>
+            <img className="navbar__logo" src={Logo} />
+            <a className="navbar__content-links" href="">
+              Films
+            </a>
+            <a className="navbar__content-links" href="">
+              Contact
+            </a>
           </div>
           <div></div>
         </div>
