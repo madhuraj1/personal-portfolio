@@ -3,19 +3,41 @@
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 1rem;
-  margin-top: 10rem;
+  margin-bottom: 4rem;
+  margin-top: 7rem;
   color: rgb(4, 0, 0);
   font-size: 32px;
-  p {
-    color: rgb(4, 0, 0);
+  q {
+    color: rgb(57, 55, 55);
     font-size: 32px;
-    margin-top: 200px;
+    margin: 0;
+    padding: 0;
+    &:before {
+      content: open-quote;
+      padding-right: 10px;
+      margin: 0;
+      padding: 0;
+    }
+
+    &:after {
+      content: close-quote;
+      margin: 0;
+      padding: 0;
+      color: $primary;
+      padding-left: 10px;
+    }
+    @media (max-width: 37.5em) {
+      &::after,
+      &::before {
+        content: "";
+      }
+      font-size: 1rem;
+      line-height: 0;
+      text-align: center;
+    }
   }
-  @media (max-width: 37.5em) {
-    font-size: 1rem;
-  }
-  & > span {
+
+  q > span {
     // text-decoration: underline;
     color: rgba($primary, 0.9);
     font-weight: 800;
@@ -32,4 +54,3 @@
     }
   }
 }
-
