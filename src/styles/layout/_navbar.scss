@@ -51,7 +51,7 @@
         content: "";
         width: 0;
         height: 3px;
-        background-color: white;
+        background-color: currentColor;
         transition: all 0.5s ease;
       }
       &::before {
@@ -61,7 +61,7 @@
         content: "";
         width: 0;
         height: 3px;
-        background-color: white;
+        background-color: currentColor;
         transition: all 0.5s ease;
       }
       &:hover::after,

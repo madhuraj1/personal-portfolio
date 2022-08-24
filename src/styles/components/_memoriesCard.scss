@@ -21,9 +21,34 @@
     border-radius: 5px;
     overflow: hidden;
     transition: all 0.4s;
-    &:hover {
-      transform: translateY(-13px);
-      box-shadow: rgba(99, 99, 99, 0.2) 0px -5px 20px 0px;
+    cursor: pointer;
+    position: relative;
+    // .go-corner {
+    //   position: absolute;
+    //   top: -30%;
+    //   left: -50%;
+    //   width: 400px;
+    //   border-radius: 50%;
+    //   height: 400px;
+    //   background-color: rgba($primary, 0.337);
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    //   color: white;
+    //   transition: all 0.4s;
+    //   transform: scale(0);
+    //   font-size: 4rem;
+    //   &:hover {
+    //     transform: scale(1);
+    //     left: -20%;
+    //   }
+    // }
+    // &:hover > .go-corner {
+    //   transform: scale(1);
+    //   left: -20%;
+    // }
+    &:hover > img {
+      filter: blur(1px);
     }
     @media (min-width: 56em) {
       width: 100%;
@@ -39,18 +64,31 @@
       width: 100%;
       height: 100%;
     }
+    &:hover > .memcard__caption {
+      bottom: 0px;
+    }
   }
+
   &__caption {
-    max-width: 100%;
-    min-width: 70%;
+    width: 100%;
+    // min-width: 70%;
     text-align: center;
     font-weight: 500;
     border-radius: 5px;
-    background-color: white;
-    padding: 10px 5px;
+    background: rgba(255, 255, 255, 0.32);
+    backdrop-filter: blur(10px);
+    padding-bottom: 1rem;
     position: absolute;
-    bottom: -10px;
+    bottom: -115px;
     left: 50%;
     transform: translateX(-50%);
+    transition: all 0.4s;
+    & > p {
+      letter-spacing: 2px;
+      padding: 1rem 0;
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: rgb(255, 255, 255);
+    }
   }
 }

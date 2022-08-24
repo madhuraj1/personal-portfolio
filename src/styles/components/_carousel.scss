@@ -152,11 +152,18 @@
   width: 100%;
   height: 100%;
   & > &-button-prev {
-    z-index: 200;
+    z-index: 10;
     color: white;
+
+    &::after {
+      font-size: 20px;
+    }
   }
   & > &-button-next {
     color: white;
+    &::after {
+      font-size: 20px;
+    }
   }
 }
 
@@ -183,7 +190,7 @@
   display: block;
   width: 100vw;
   height: 100vh;
-  // object-fit: contain;
+  object-fit: cover;
 }
 
 .swiper {

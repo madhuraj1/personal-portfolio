@@ -14,6 +14,9 @@ export const Navbar = () => {
   const style = (path: string) => {
     return { textDecoration: loc.pathname === path ? "line-through" : "none" };
   };
+  const anchorStyle = {
+    color: loc.pathname !== "/" ? "black" : "white",
+  };
   return (
     <>
       <div className="navbar">
@@ -80,17 +83,37 @@ export const Navbar = () => {
             </nav>
           </div>
           <div className="navbar__content active">
-            <a className="navbar__content-links" href="/home">
+            <a
+              style={anchorStyle}
+              className="navbar__content-links"
+              href="/about"
+            >
               About
             </a>
-            <a className="navbar__content-links" href="">
-              Memoried
+            <a
+              style={anchorStyle}
+              className="navbar__content-links"
+              href="memories"
+            >
+              Memories
             </a>
-            <img className="navbar__logo" src={Logo} />
-            <a className="navbar__content-links" href="">
+            <img
+              onClick={() => router("/")}
+              className="navbar__logo"
+              src={Logo}
+            />
+            <a
+              style={anchorStyle}
+              className="navbar__content-links"
+              href="films"
+            >
               Films
             </a>
-            <a className="navbar__content-links" href="">
+            <a
+              style={anchorStyle}
+              className="navbar__content-links"
+              href="contact"
+            >
               Contact
             </a>
           </div>
