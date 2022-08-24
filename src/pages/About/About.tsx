@@ -27,7 +27,10 @@ export const About = () => {
           </div>
           <div className="about__picture">
             <div className="about__picture__cont">
-              <img src={data?.aboutCollection.items[0].profilePicture.url} />
+              <img
+                alt="Madhuraj Photography"
+                src={data?.aboutCollection.items[0].profilePicture.url}
+              />
             </div>
           </div>
         </div>

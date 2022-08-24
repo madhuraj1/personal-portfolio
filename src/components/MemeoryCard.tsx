@@ -5,7 +5,7 @@ export const MemoryCard = (props: { image: any }) => {
     <li className="memorycard">
       <figure className="memorycard__fig">
         <a href={props.image} target="_blank">
-          <img src={props.image}></img>
+          <img alt="Madhuraj Photography" src={props.image}></img>
         </a>
       </figure>
     </li>

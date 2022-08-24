@@ -67,7 +67,7 @@ export const Memory = () => {
                     {myData[0].map((d: any) => {
                       return (
                         <img
-                          alt="madhuraj Photography"
+                          alt="Madhuraj Photography"
                           loading="lazy"
                           src={d.url}
                         />
@@ -79,7 +79,7 @@ export const Memory = () => {
                     {myData[1].map((d: any) => {
                       return (
                         <img
-                          alt="madhuraj Photography"
+                          alt="Madhuraj Photography"
                           loading="lazy"
                           src={d.url}
                         />
@@ -90,31 +90,7 @@ export const Memory = () => {
               }
             </div>
           </div>
-          {/* <div className="memory">
-            <div className="memory__card">
-              <figure className="memory__card__fig">
-                <img
-                  alt={"Madhuraj Photography"}
-                  src={data?.memories.coverImage.url}
-                ></img>
-                <figcaption className="memory__card__caption">
-                  {data?.memories.name}
-                </figcaption>
-              </figure>
-            </div>
-            <div className="memory__desc">{data?.memories.caption}</div>
-            <div className="memory__tag">
-              MEM<span>ORIES</span>
-            </div>
 
-            <ul className="memory__picture">
-              {data?.memories?.memoryCollectionCollection.items.map(
-                (row: MemoryCollectionCollectionItem, index: number) => {
-                  return <MemoryCard key={row.url} image={row.url} />;
-                }
-              )}
-            </ul>
-          </div> */}
           <MinimalFooter />
         </>
       )}

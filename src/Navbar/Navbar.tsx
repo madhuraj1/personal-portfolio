@@ -98,6 +98,7 @@ export const Navbar = () => {
               Memories
             </a>
             <img
+              alt="Madhuraj Photography"
               onClick={() => router("/")}
               className="navbar__logo"
               src={Logo}
