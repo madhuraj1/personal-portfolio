@@ -21,6 +21,7 @@ export const MemoriesCard = (props: {
         <img alt={"Madhuraj Photography"} src={props.image}></img>
         <figcaption className="memcard__caption">
           <p>{props.data.name}</p>
+
           <Button />
         </figcaption>
         <div className="go-corner">

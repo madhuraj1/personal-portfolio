@@ -5,9 +5,6 @@
   $nav-item-nb: 6;
 
   width: 100%;
-
-  // margin-right: calc(100vw - 100%);
-  // margin-right: 0;
   height: 3rem;
   position: absolute;
   top: 0;
@@ -17,15 +14,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  // &__icon {
-  //   margin: 1rem;
-  //   width: 2.5rem;
-  //   height: 2rem;
-  //   cursor: pointer;
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  // }
+
   &__content {
     display: flex;
     flex-direction: row;
@@ -35,8 +24,8 @@
     column-gap: 2rem;
     &-links {
       color: white;
-      font-weight: 600;
-
+      font-weight: 100;
+      font-weight: 1rem;
       text-decoration: none;
       cursor: pointer;
       text-transform: uppercase;

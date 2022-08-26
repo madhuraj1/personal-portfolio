@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import Logo from "../assets/logo.svg";
+import Logo1 from "../assets/Logo1.svg";
+import Logo2 from "../assets/Logo2.svg";
 
 export const Navbar = () => {
   const [isactive, setisactive] = useState<boolean>(false);
@@ -101,7 +102,7 @@ export const Navbar = () => {
               alt="Madhuraj Photography"
               onClick={() => router("/")}
               className="navbar__logo"
-              src={Logo}
+              src={loc.pathname === "/" ? Logo2 : Logo1}
             />
             <a
               style={anchorStyle}

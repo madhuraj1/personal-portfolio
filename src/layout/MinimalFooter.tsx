@@ -1,7 +1,6 @@
 import React from "react";
 
 export const MinimalFooter = () => {
-
   return (
     <div
       style={{
@@ -9,8 +8,8 @@ export const MinimalFooter = () => {
         marginTop: "2rem",
         width: "100%",
         padding: ".5rem 0",
-        backgroundColor: "black",
-        color: "white",
+
+        color: "black",
       }}
     >
       © {new Date().getFullYear()} Madhuraj Photography
