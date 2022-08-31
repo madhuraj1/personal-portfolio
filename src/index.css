@@ -68,12 +68,7 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
-@font-face {
-  font-family: "Belgiana";
-  src: url("../../assets/Fonts/Belgiansignature.otf") format(otf)
-    url("../../assets/Fonts/Belgiansignature.ttf") format(ttf)
-    url("../../assets/Fonts/Belgiansignature.woff") format(woff);
-}
+
 .pace {
   -webkit-pointer-events: none;
   pointer-events: none;
