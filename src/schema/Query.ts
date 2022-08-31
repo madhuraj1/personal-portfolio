@@ -31,7 +31,7 @@ query Memories{
             id
         }
         name
-        caption
+        about
         coverImage{
           fileName
           url
@@ -83,7 +83,7 @@ query Memories($id:String!){
             id
         }
         name
-        caption
+        about
         coverImage{
           fileName
           url

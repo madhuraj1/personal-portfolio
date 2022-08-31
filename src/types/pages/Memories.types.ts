@@ -10,7 +10,7 @@ export interface MemoriesCollection {
 export interface MemoriesCollectionItem {
     sys:{ id:string;}
     name: string;
-    caption:string;
+    about:string;
     coverImage: CoverImage;
     memoryCollectionCollection: MemoryCollectionCollection;
 }

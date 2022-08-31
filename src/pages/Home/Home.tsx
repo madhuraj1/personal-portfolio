@@ -6,6 +6,7 @@ import { useQuery } from "@apollo/client";
 import { QuoteQuery } from "../../schema/Query";
 import { Data } from "../../types/pages/Home.types";
 import { MinimalFooter } from "../../layout/MinimalFooter";
+import { Artwork } from "../../components/Artwork";
 export const Home = () => {
   const { data, loading } = useQuery<Data>(QuoteQuery);
   return (
@@ -18,7 +19,7 @@ export const Home = () => {
       </div>
 
       <Carousel />
-
+      {/* <Artwork /> */}
       <MinimalFooter />
     </main>
   );

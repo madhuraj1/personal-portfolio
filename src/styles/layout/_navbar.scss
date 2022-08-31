@@ -147,7 +147,7 @@
     }
   }
   &__nav {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
@@ -212,9 +212,6 @@
   //   }
   // }
   [id="navcheck"]:not(:checked) {
-    .navbar__nav {
-      z-index: -11;
-    }
   }
   [id="navcheck"]:checked {
     & + .navbar__label {
@@ -241,6 +238,7 @@
     & ~ .navbar__nav {
       transform: translateX(0);
       z-index: 51;
+      position: fixed;
       &::before {
         transform: skewX(0deg) translateX(0);
         box-shadow: 0 0.1rem 1rem rgb(128, 128, 128);
