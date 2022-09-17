@@ -1,2 +1,29 @@
 .art {
+  &__heading {
+    margin-top: 4rem;
+    height: 20rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > img {
+      width: 80%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  &__work {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem;
+    &-txt {
+      initial-letter: 2;
+      text-align: justify;
+    }
+    &-heading {
+    }
+  }
 }

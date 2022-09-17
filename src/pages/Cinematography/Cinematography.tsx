@@ -23,11 +23,11 @@ export const Cinematography = () => {
         {!loading && (
           <div className="films__vid">
             <>
-              {data?.youtubeLinksCollection.items.map((yt, index) => {
+              {data?.youtubeCollection.items.map((yt, index) => {
                 return (
                   <iframe
                     className="films__vid_items"
-                    src="https://www.youtube.com/embed/d72vXhJDE6M"
+                    src={`https://www.youtube.com/embed/${yt.youtubeVideoId}`}
                   ></iframe>
                 );
               })}

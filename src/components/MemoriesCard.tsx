@@ -3,10 +3,11 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { MemoriesCollectionItem } from "../types/pages/Memories.types";
 import { Button } from "./Button";
-
+import { FiArrowRightCircle } from "react-icons/fi";
 export const MemoriesCard = (props: {
   image: any;
   data: MemoriesCollectionItem;
+  number: number;
 }) => {
   const router = useNavigate();
 
@@ -20,13 +21,13 @@ export const MemoriesCard = (props: {
       <figure className="memcard__fig">
         <img alt={"Madhuraj Photography"} src={props.image}></img>
         <figcaption className="memcard__caption">
-          <p>{props.data.name}</p>
-
-          <Button />
+          <div className="memcard__details">
+            <p>{props.number < 9 ? "0" + props.number : props.number}</p>
+            <FiArrowRightCircle />
+          </div>
+          <div className="memcard__divider"></div>
+          <div className="memcard__name">{props.data.name}</div>
         </figcaption>
-        <div className="go-corner">
-          <div className="go-arrow">→</div>
-        </div>
       </figure>
     </li>
   );

@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { MemoriesCard } from "../../components/MemoriesCard";
 import sm from "../../assets/sm.png";
 import lg from "../../assets/21.png";
@@ -14,7 +14,8 @@ export const Memories = () => {
     <>
       <div className="memories">
         <h1 className="memories__heading">
-          MEMO<span>RIES</span>
+          {/* MEMO<span>RIES</span> */}
+          Memories
           {/* MEMO<span>RIES</span> */}
         </h1>
         <div className="memories__desc">
@@ -32,6 +33,7 @@ export const Memories = () => {
             {data?.memoriesCollection.items.map((coll, index) => {
               return (
                 <MemoriesCard
+                  number={index}
                   key={index}
                   data={coll}
                   image={coll.coverImage.url}

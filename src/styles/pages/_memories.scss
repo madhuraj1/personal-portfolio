@@ -1,14 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Great+Vibes&family=Sacramento&family=Tangerine:wght@700&display=swap");
 .memories {
   margin-top: 4rem;
   overflow: auto;
   &__heading {
-    margin-top: 4rem;
-    font-size: 3rem;
+    margin-top: 8rem;
+    font-size: 8rem;
     text-align: center;
-    letter-spacing: 30px;
+    // letter-spacing: 30px;
     color: $primary;
     margin-bottom: 2rem;
-    font-family: "Belgiana";
+    // font-family: "Great Vibes", cursive;
+    // font-family: 'Great Vibes', cursive;
+    // font-family: "Sacramento", cursive;
+    background: linear-gradient(90deg, #804b33 0%, #f0ceb1 104.72%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-family: "Tangerine", cursive;
 
     @media (max-width: 37.6em) {
       letter-spacing: 10px;
@@ -41,7 +50,7 @@
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    row-gap: 4rem;
+    row-gap: 2rem;
     margin-bottom: 4rem;
     margin: 0;
     padding: 0;

@@ -69,7 +69,7 @@ query contactQuery{
 
 export const cinemaQuery = gql`
 query youtubeLinks{
-  youtubeLinksCollection{
+  youtubeCollection{
     items{
 			youtubeVideoId
     }
