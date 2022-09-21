@@ -27,10 +27,7 @@ export const Carousel = () => {
     <>
       <Swiper
         slidesPerView={"auto"}
-        // spaceBetween={30}
-        // loop={true}
         allowTouchMove={true}
-        // mousewheel={true}
         keyboard={true}
         autoplay={{
           delay: 5000,

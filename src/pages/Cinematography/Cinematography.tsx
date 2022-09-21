@@ -11,7 +11,7 @@ export const Cinematography = () => {
   return (
     <>
       <div className="films">
-        <h1 className="films__heading">FILMS</h1>
+        <h1 className="films__heading">Films</h1>
         <p className="films__desc">
           The bride walking in, the groom winking at his friend, an emotional
           father, some chirpy friends. How much transpires in a wedding! It's a

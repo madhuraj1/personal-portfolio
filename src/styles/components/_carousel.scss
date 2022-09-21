@@ -191,6 +191,10 @@
   width: 100vw;
   height: 100vh;
   object-fit: cover;
+  @media (max-width: 600px) {
+    aspect-ratio: auto;
+    height: auto;
+  }
 }
 
 .swiper {

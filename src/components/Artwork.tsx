@@ -8,7 +8,10 @@ export const Artwork = () => {
         <img src={Art} />
       </div>
       <div className="art__work">
-        <img src={Art2} />
+        <div className="art__work--img">
+          <img src={Art2} />
+        </div>
+
         <p className="art__work-txt">
           <h1 className="art__work-heading">Heading</h1>
           One final word. There’s just something about wedding films, the magic

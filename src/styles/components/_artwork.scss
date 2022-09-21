@@ -1,11 +1,12 @@
 .art {
   &__heading {
-    margin-top: 4rem;
-    height: 20rem;
+    margin-top: 10rem;
+    // height: 1rem;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     & > img {
       width: 80%;
       height: 100%;
@@ -19,11 +20,48 @@
     align-items: center;
     gap: 3rem;
     padding: 2rem;
+    &--img {
+      width: 50%;
+      display: grid;
+      place-items: center;
+
+      & img {
+        width: 80%;
+        height: auto;
+        aspect-ratio: auto;
+        @media (max-width: 54em) {
+          width: auto;
+        }
+      }
+    }
+
+    @media (max-width: 54em) {
+      flex-direction: column;
+    }
     &-txt {
+      width: 50%;
       initial-letter: 2;
       text-align: justify;
+      align-self: center;
     }
     &-heading {
+      margin-bottom: 1rem;
+      background: linear-gradient(
+        to right,
+        #ac663f 0%,
+        27.470356225967407%,
+        #c07246 54.940712451934814%,
+        77.47035622596741%,
+        #a7623d 100%
+      );
+      letter-spacing: 4px;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      /* Gradient in Hex */
+
+      font-family: "Tangerine", cursive;
     }
   }
 }

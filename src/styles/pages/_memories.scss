@@ -12,11 +12,22 @@
     // font-family: "Great Vibes", cursive;
     // font-family: 'Great Vibes', cursive;
     // font-family: "Sacramento", cursive;
-    background: linear-gradient(90deg, #804b33 0%, #f0ceb1 104.72%);
+    // background: linear-gradient(90deg, #804b33 0%, #f0ceb1 104.72%);
+    background: linear-gradient(
+      to right,
+      #ac663f 0%,
+      27.470356225967407%,
+      #c07246 54.940712451934814%,
+      77.47035622596741%,
+      #a7623d 100%
+    );
+    letter-spacing: 4px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
+    /* Gradient in Hex */
+
     font-family: "Tangerine", cursive;
 
     @media (max-width: 37.6em) {

@@ -7,6 +7,7 @@ import { MemoryQuery } from "../../schema/Query";
 import { Memory } from "../../types/pages/Memories.types";
 import { MinimalFooter } from "../../layout/MinimalFooter";
 import { Spinner } from "../../components/Spinner";
+import { Footer } from "../../layout/Footer";
 export const Memories = () => {
   const { data, loading } = useQuery<Memory>(MemoryQuery);
 
