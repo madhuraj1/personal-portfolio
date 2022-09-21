@@ -3,7 +3,7 @@ import React from "react";
 import { Spinner } from "../../components/Spinner";
 import { MinimalFooter } from "../../layout/MinimalFooter";
 import { cinemaQuery } from "../../schema/Query";
-import { ICinema } from "../../types/pages/Cinema.types";
+import { ICinema, ItemsEntity } from "../../types/pages/Cinema.types";
 
 export const Cinematography = () => {
   const { data, loading } = useQuery<ICinema>(cinemaQuery);
@@ -23,14 +23,16 @@ export const Cinematography = () => {
         {!loading && (
           <div className="films__vid">
             <>
-              {data?.youtubeCollection.items.map((yt, index) => {
-                return (
-                  <iframe
-                    className="films__vid_items"
-                    src={`https://www.youtube.com/embed/${yt.youtubeVideoId}`}
-                  ></iframe>
-                );
-              })}
+              {(data?.youtubeCollection.items as ItemsEntity[]).map(
+                (yt, index) => {
+                  return (
+                    <iframe
+                      className="films__vid_items"
+                      src={`https://www.youtube.com/embed/${yt.youtubeVideoId}`}
+                    ></iframe>
+                  );
+                }
+              )}
             </>
           </div>
         )}
