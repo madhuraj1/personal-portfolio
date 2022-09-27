@@ -24,13 +24,15 @@
       width: 50%;
       display: grid;
       place-items: center;
-
+      @media (max-width: 54em) {
+        width: 100%;
+      }
       & img {
         width: 80%;
         height: auto;
         aspect-ratio: auto;
         @media (max-width: 54em) {
-          width: auto;
+          width: 100%;
         }
       }
     }
@@ -43,6 +45,9 @@
       initial-letter: 2;
       text-align: justify;
       align-self: center;
+      @media (max-width: 54em) {
+        width: 100%;
+      }
     }
     &-heading {
       margin-bottom: 1rem;

@@ -189,7 +189,7 @@
 .swiper-slide img {
   display: block;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 6rem);
   object-fit: cover;
   @media (max-width: 600px) {
     aspect-ratio: auto;

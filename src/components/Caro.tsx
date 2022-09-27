@@ -26,6 +26,9 @@ export const Carousel = () => {
   return (
     <>
       <Swiper
+        style={{
+          paddingTop: "6rem",
+        }}
         slidesPerView={"auto"}
         allowTouchMove={true}
         keyboard={true}

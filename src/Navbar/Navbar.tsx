@@ -16,7 +16,7 @@ export const Navbar = () => {
     return { textDecoration: loc.pathname === path ? "line-through" : "none" };
   };
   const anchorStyle = {
-    color: loc.pathname !== "/" ? "black" : "white",
+    color: loc.pathname !== "/" ? "black" : "black",
   };
   return (
     <>
