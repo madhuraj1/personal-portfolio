@@ -154,7 +154,9 @@
   & > &-button-prev {
     z-index: 10;
     color: white;
-
+    @media (max-width: 600px) {
+      top: 65%;
+    }
     &::after {
       font-size: 20px;
     }
@@ -163,6 +165,9 @@
     color: white;
     &::after {
       font-size: 20px;
+    }
+    @media (max-width: 600px) {
+      top: 65%;
     }
   }
 }

@@ -6,27 +6,30 @@
     text-transform: uppercase;
     position: absolute;
     width: 100%;
-    top: 10rem;
+    bottom: 2rem;
     text-align: center;
     z-index: 55;
     color: rgb(4, 0, 0);
     font-size: 32px;
     font-family: "Bad Script", cursive;
     text-transform: capitalize;
+    @media (max-width: 500px) {
+      line-height: 10px;
+    }
     q {
       color: rgb(255, 255, 255);
       font-size: 32px;
       font-weight: 800;
       margin: 0;
       padding: 0;
-
+      line-height: 0;
       @media (max-width: 37.5em) {
         &::after,
         &::before {
           content: "";
         }
         font-size: 1rem;
-        line-height: 0;
+        line-height: 10px;
         text-align: center;
       }
     }

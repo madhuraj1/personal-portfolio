@@ -13,12 +13,12 @@ export const Home = () => {
   return (
     <>
       <main className="home">
-        <div className="quote">
+        {/* <div className="quote">
           <q>
             {data?.quoteCollection.items[0].quote.slice(0, 15)}
             <span>{data?.quoteCollection.items[0].quote.slice(15)}</span>
           </q>
-        </div>
+        </div> */}
 
         <Carousel />
         <Artwork />

@@ -17,6 +17,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import { useState } from "react";
+import { Quote } from "./Quote";
 
 // import "./styles.css";
 
@@ -52,6 +53,7 @@ export const Carousel = () => {
         ]}
         className="mySwiper"
       >
+        <Quote />
         {loading && (
           <div className="carousel__spinner">
             <Spinner />
