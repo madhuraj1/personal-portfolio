@@ -37,7 +37,6 @@ export const Cinematography = () => {
           </div>
         )}
       </div>
-      <MinimalFooter />
     </>
   );
 };

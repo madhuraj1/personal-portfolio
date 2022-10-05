@@ -22,7 +22,6 @@ export const Home = () => {
 
         <Carousel />
         <Artwork />
-        <MinimalFooter />
       </main>
       {/* <Footer /> */}
     </>

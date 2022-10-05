@@ -161,7 +161,6 @@ export const Contact = () => {
         </div>
         <ToastContainer />
       </div>
-      <MinimalFooter />
     </>
   );
 };

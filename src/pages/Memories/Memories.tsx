@@ -44,7 +44,6 @@ export const Memories = () => {
           </ul>
         )}
       </div>
-      <MinimalFooter />
     </>
   );
 };

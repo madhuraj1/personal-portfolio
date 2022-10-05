@@ -90,8 +90,6 @@ export const Memory = () => {
               }
             </div>
           </div>
-
-          <MinimalFooter />
         </>
       )}
     </>

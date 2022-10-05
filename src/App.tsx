@@ -8,6 +8,7 @@ import { About } from "./pages/About/About";
 import { Contact } from "./pages/Contact/Contact";
 import { Cinematography } from "./pages/Cinematography/Cinematography";
 import "./App.css";
+import { Footer } from "./layout/Footer";
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="films" element={<Cinematography />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

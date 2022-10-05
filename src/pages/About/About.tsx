@@ -36,7 +36,6 @@ export const About = () => {
         </div>
       )}
       <img src="" />
-      <Footer />
     </>
   );
 };
