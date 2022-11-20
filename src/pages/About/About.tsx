@@ -1,9 +1,9 @@
 import { useQuery } from "@apollo/client";
-import React, { Profiler } from "react";
+import React, { Profiler, useRef } from "react";
 import { Spinner } from "../../components/Spinner";
-import { Footer } from "../../layout/Footer";
 import { Aboutquery } from "../../schema/Query";
 import { Data } from "../../types/pages/About.types";
+
 export const About = () => {
   const { data, loading, error } = useQuery<Data>(Aboutquery);
 
@@ -21,7 +21,10 @@ export const About = () => {
             <h6 className="about_details__sec3">
               A professional <span>Photograher</span>
             </h6>
-            <p className="about_details__sec4">
+            <h4 className="about_details__sec4">
+              {data?.aboutCollection.items[0].heading}
+            </h4>
+            <p className="about_details__sec5">
               {data?.aboutCollection.items[0].about}
             </p>
           </div>

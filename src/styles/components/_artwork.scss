@@ -2,17 +2,23 @@
   max-width: 1660px;
   margin: 0 auto;
   &__heading {
-    margin-top: 10rem;
+    margin-top: 5rem;
     // height: 1rem;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    @media (max-width: 54em) {
+      margin-top: 3rem;
+    }
     & > img {
-      width: 80%;
+      width: 30%;
       height: 100%;
       object-fit: contain;
+      @media (max-width: 54em) {
+        width: 70%;
+      }
     }
   }
   &__work {
@@ -45,6 +51,7 @@
     &-txt {
       width: 50%;
       initial-letter: 2;
+      line-height: 1.8em;
       text-align: justify;
       align-self: center;
       @media (max-width: 54em) {
@@ -67,7 +74,7 @@
       background-clip: text;
       text-fill-color: transparent;
       /* Gradient in Hex */
-
+      font-size: 3rem;
       font-family: "Tangerine", cursive;
     }
   }

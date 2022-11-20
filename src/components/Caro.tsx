@@ -32,10 +32,10 @@ export const Carousel = () => {
         }}
         slidesPerView={"auto"}
         allowTouchMove={true}
-        keyboard={true}
+        // keyboard={true}
         autoplay={{
+          disableOnInteraction: false,
           delay: 5000,
-          stopOnLastSlide: false,
         }}
         spaceBetween={30}
         effect={"fade"}

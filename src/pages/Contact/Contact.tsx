@@ -10,7 +10,7 @@ import { MinimalFooter } from "../../layout/MinimalFooter";
 import { useQuery } from "@apollo/client";
 import { contactQuery } from "../../schema/Query";
 import { IContact } from "../../types/pages/Contact.types";
-
+import ContactImage from ".././../assets/contact.jpg";
 export const Contact = () => {
   const { data } = useQuery<IContact>(contactQuery);
 

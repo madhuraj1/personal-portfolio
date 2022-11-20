@@ -1,18 +1,26 @@
 export interface Data {
-    aboutCollection: AboutCollection;
+  aboutCollection: AboutCollection;
 }
 
 export interface AboutCollection {
-    items: Item[];
+  limit: number;
+  items: Item[];
 }
 
 export interface Item {
-    name:           string;
-    about:          string;
-    profilePicture: ProfilePicture;
-    youtubeLinks:   string[];
+  name: string;
+  about: string;
+  profilePicture: ProfilePicture;
+  heading: string;
+  whatapp: string;
+  instagram: string;
+  gmail: string;
+  youtube: string;
+  twitter: null;
 }
 
 export interface ProfilePicture {
-    url: string;
+  url: string;
+  height: number;
+  width: number;
 }
