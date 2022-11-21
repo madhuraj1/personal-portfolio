@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { SiBehance, SiFacebook, SiInstagram, SiTwitter } from "react-icons/si";
+import {
+  SiBehance,
+  SiFacebook,
+  SiGmail,
+  SiInstagram,
+  SiTwitter,
+  SiWhatsapp,
+  SiYoutube,
+} from "react-icons/si";
 import email from "../../assets/email.png";
 import location from "../../assets/location.png";
 import phone from "../../assets/phone.png";
@@ -58,9 +66,67 @@ export const Contact = () => {
   };
   return (
     <>
-      <div className="container">
+      <div className="contactme">
+        <div className="contactme__image">
+          <img src={ContactImage} alt="" />
+        </div>
+        <div className="contactme__form">
+          <form className="form">
+            <div className="form__heading">Lets Get in Touch</div>
+            <div className="form__name">
+              <label htmlFor="">Name</label>
+              <input type="text" />
+            </div>
+            <div className="form__email">
+              <label htmlFor="">Email</label>
+              <input type="text" />
+            </div>
+            <div className="form__number">
+              <label htmlFor="">Phone Number</label>
+              <input type="text" />
+            </div>
+            <div className="form__message">
+              <label htmlFor="">Message</label>
+              <input type="text" />
+            </div>
+            <button>Submit</button>
+            <div className="contactme__social-container">
+              <ul className="social-icons">
+                <li>
+                  <a href="#">
+                    <i className="fa fa-instagram">
+                      <SiInstagram />
+                    </i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa fa-twitter">
+                      <SiYoutube />
+                    </i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa fa-linkedin">
+                      <SiWhatsapp />
+                    </i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa fa-codepen">
+                      <SiGmail />
+                    </i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </form>
+        </div>
+
         {/* <span className="big-circle"></span> */}
-        <img src={shape} className="square" alt="" />
+        {/* <img src={shape} className="square" alt="" />
         <div className="form">
           <div className="contact-info">
             <h3 className="title">Let's get in touch</h3>
@@ -158,7 +224,7 @@ export const Contact = () => {
               <input type="submit" value="Send" className="btn" />
             </form>
           </div>
-        </div>
+        </div> */}
         <ToastContainer />
       </div>
     </>
