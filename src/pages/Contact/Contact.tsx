@@ -38,27 +38,56 @@ export const Contact = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setContact({ ...contact, [e.target.name]: e.target.value });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   try {
+  //     console.log(contact);
+
+  //     const res = await fetch("https://api.staticforms.xyz/submit", {
+  //       method: "POST",
+  //       body: JSON.stringify(contact),
+  //       headers: { "Content-Type": "application/json" },
+  //     });
+
+  //     const json = await res.json();
+  //     console.log(json);
+
+  //     if (json.success) {
+  //       notify("Thank you for reaching out to us.");
+  //     } else {
+  //       notify("Error while sending");
+  //     }
+  //   } catch (e) {
+  //     notify("An error occured while submitting the form");
+  //   }
+  // };
+  const handlesubmit = (e) => {
     e.preventDefault();
-    try {
-      console.log(contact);
-
-      const res = await fetch("https://api.staticforms.xyz/submit", {
+    if (
+      (formdata.email !== "",
+      formdata.message !== "",
+      formdata.name !== "",
+      formdata.phone !== "")
+    ) {
+      const formData = new FormData();
+      setLoading(true);
+      formData.append("name", formdata.name);
+      formData.append("email", formdata.email);
+      formData.append("phone", formdata.phone);
+      formData.append("message", formdata.message);
+      fetch("https://www.actionforms.io/e/r/madhurajphotography", {
         method: "POST",
-        body: JSON.stringify(contact),
-        headers: { "Content-Type": "application/json" },
-      });
-
-      const json = await res.json();
-      console.log(json);
-
-      if (json.success) {
-        notify("Thank you for reaching out to us.");
-      } else {
-        notify("Error while sending");
-      }
-    } catch (e) {
-      notify("An error occured while submitting the form");
+        body: formData,
+      })
+        .then((res) => {
+          setLoading(false);
+          if (res.status === 200) {
+            notify("Succesfully recieved");
+          }
+        })
+        .catch((err) => {
+          setLoading(false);
+        });
     }
   };
   const [formdata, setformdata] = useState<{
@@ -77,6 +106,7 @@ export const Contact = () => {
       return { ...form, [e.target.name]: e.target.value };
     });
   };
+  const [loading, setLoading] = useState<boolean>(false);
   return (
     <>
       <div className="contactme">
@@ -89,20 +119,7 @@ export const Contact = () => {
             // action="https://www.actionforms.io/e/r/madhurajphotography"
             // method="POST"
             target=""
-            onSubmit={(e) => {
-              e.preventDefault();
-              const formData = new FormData();
-              formData.append("name", formdata.name);
-              formData.append("email", formdata.email);
-              formData.append("phone", formdata.phone);
-              formData.append("message", formdata.message);
-              fetch("https://www.actionforms.io/e/r/madhurajphotography", {
-                method: "POST",
-                body: formData,
-              }).then((res) => {
-                console.log(res);
-              });
-            }}
+            onSubmit={handlesubmit}
           >
             <div className="form__heading">Details About You</div>
             <div className="form__name">
@@ -122,8 +139,14 @@ export const Contact = () => {
               <input onChange={onChange} name="message" required type="text" />
             </div>
             <button type="submit">
-              <span>Get in touch</span>
-              <img src={Send} alt="" />
+              {loading ? (
+                <span>Please Wait...</span>
+              ) : (
+                <>
+                  <span>Get in touch</span>
+                  <img src={Send} alt="" />
+                </>
+              )}
             </button>
             <div className="contactme__social-container">
               <ul className="social-icons">

@@ -20,7 +20,7 @@ export const Footer = () => {
       <div className="footer__copyright">
         <div> © Madhuraj Photography 2022</div>
 
-        <div>email@email.com</div>
+        <div>madhurajphotography.in@gmail.com</div>
       </div>
     </div>
   );
