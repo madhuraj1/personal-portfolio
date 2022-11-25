@@ -13,11 +13,15 @@ export const Cinematography = () => {
       <div className="films">
         <h1 className="films__heading">Films</h1>
         <p className="films__desc">
-          The bride walking in, the groom winking at his friend, an emotional
-          father, some chirpy friends. How much transpires in a wedding! It's a
-          celebration of love and coming together of two souls. The magic in
-          your story is painted in our galleries. Say Cheese wedding films is
-          one cherished work of love.
+          One final word. There’s just something about wedding films, the magic
+          of emotions ,listening to speeches, and watching your loved ones
+          dance, essence of culture and what not!! It takes all those hours in
+          the lead-up, and all those memories from the day, and eternalizes them
+          forever. And that’s where we step in. while we keep it real and raw,
+          yet the magical cinematic touch of ours to freeze that day forever in
+          your memories. well coming to travel films or travel projects its all
+          new world to explore and experience, and just making others to
+          experience and feel it visually!!.
         </p>
         {loading && <Spinner />}
         {!loading && (

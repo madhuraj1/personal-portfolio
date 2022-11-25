@@ -22,7 +22,9 @@ export const MemoriesCard = (props: {
         <img alt={"Madhuraj Photography"} src={props.image}></img>
         <figcaption className="memcard__caption">
           <div className="memcard__details">
-            <p>{props.number < 9 ? "0" + props.number : props.number}</p>
+            <p style={{ visibility: "hidden" }}>
+              {props.number < 9 ? "0" + props.number : props.number}
+            </p>
             <FiArrowRightCircle />
           </div>
           <div className="memcard__divider"></div>

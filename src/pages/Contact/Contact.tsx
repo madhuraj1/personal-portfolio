@@ -19,12 +19,9 @@ import { useQuery } from "@apollo/client";
 import { contactQuery } from "../../schema/Query";
 import { IContact } from "../../types/pages/Contact.types";
 import ContactImage from ".././../assets/contact.jpg";
+import Send from "../../assets/send.svg";
 export const Contact = () => {
   const { data } = useQuery<IContact>(contactQuery);
-
-  React.useEffect(() => {
-    console.log(data?.contactCollection.items[0]);
-  }, [data]);
 
   const [contact, setContact] = useState({
     name: "",
@@ -64,6 +61,22 @@ export const Contact = () => {
       notify("An error occured while submitting the form");
     }
   };
+  const [formdata, setformdata] = useState<{
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+  }>({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setformdata((form) => {
+      return { ...form, [e.target.name]: e.target.value };
+    });
+  };
   return (
     <>
       <div className="contactme">
@@ -71,29 +84,55 @@ export const Contact = () => {
           <img src={ContactImage} alt="" />
         </div>
         <div className="contactme__form">
-          <form className="form">
-            <div className="form__heading">Lets Get in Touch</div>
+          <form
+            className="form"
+            // action="https://www.actionforms.io/e/r/madhurajphotography"
+            // method="POST"
+            target=""
+            onSubmit={(e) => {
+              e.preventDefault();
+              const formData = new FormData();
+              formData.append("name", formdata.name);
+              formData.append("email", formdata.email);
+              formData.append("phone", formdata.phone);
+              formData.append("message", formdata.message);
+              fetch("https://www.actionforms.io/e/r/madhurajphotography", {
+                method: "POST",
+                body: formData,
+              }).then((res) => {
+                console.log(res);
+              });
+            }}
+          >
+            <div className="form__heading">Details About You</div>
             <div className="form__name">
               <label htmlFor="">Name</label>
-              <input type="text" />
+              <input onChange={onChange} name="name" required type="text" />
             </div>
             <div className="form__email">
               <label htmlFor="">Email</label>
-              <input type="text" />
+              <input onChange={onChange} required name="email" type="email" />
             </div>
             <div className="form__number">
               <label htmlFor="">Phone Number</label>
-              <input type="text" />
+              <input onChange={onChange} name="phone" required type="tel" />
             </div>
             <div className="form__message">
               <label htmlFor="">Message</label>
-              <input type="text" />
+              <input onChange={onChange} name="message" required type="text" />
             </div>
-            <button>Submit</button>
+            <button type="submit">
+              <span>Get in touch</span>
+              <img src={Send} alt="" />
+            </button>
             <div className="contactme__social-container">
               <ul className="social-icons">
                 <li>
-                  <a href="#">
+                  <a
+                    onClick={() =>
+                      window.open(data?.contactCollection.items[0].instagram)
+                    }
+                  >
                     <i className="fa fa-instagram">
                       <SiInstagram />
                     </i>
@@ -101,20 +140,41 @@ export const Contact = () => {
                 </li>
                 <li>
                   <a href="#">
-                    <i className="fa fa-twitter">
+                    <i
+                      onClick={() =>
+                        window.open(data?.contactCollection.items[0].youtube)
+                      }
+                      className="fa fa-twitter"
+                    >
                       <SiYoutube />
                     </i>
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a
+                    onClick={() => {
+                      navigator.clipboard.writeText(
+                        data?.contactCollection.items[0].number || ""
+                      );
+                      notify("Number Copied to clipbord");
+                    }}
+                    href="#"
+                  >
                     <i className="fa fa-linkedin">
                       <SiWhatsapp />
                     </i>
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a
+                    onClick={() => {
+                      navigator.clipboard.writeText(
+                        data?.contactCollection.items[0].email || ""
+                      );
+                      notify("Gmail Copied to clipbord");
+                    }}
+                    href="#"
+                  >
                     <i className="fa fa-codepen">
                       <SiGmail />
                     </i>

@@ -24,10 +24,6 @@
     cursor: pointer;
     position: relative;
 
-    &:hover > img {
-      filter: blur(1px);
-    }
-
     @media (min-width: 56em) {
       width: 100%;
     }

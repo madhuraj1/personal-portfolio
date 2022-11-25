@@ -12,7 +12,7 @@ export const Memory = () => {
   const [myData, setMyData] = useState<[[], []]>([[], []]);
   const ref1 = useRef<HTMLDivElement>(null);
   const ref2 = useRef<HTMLDivElement>(null);
-  const { loading, error } = useQuery<GetMemoryById>(getMemoriesdById, {
+  const { loading, error, data } = useQuery<GetMemoryById>(getMemoriesdById, {
     variables: { id: location.state },
     onCompleted: (res) => {
       const result: any = [[], []];
@@ -59,6 +59,18 @@ export const Memory = () => {
       {loading && <Spinner />}
       {!loading && !error && (
         <>
+          <div className="memory">
+            <div className="memory__heading">{data?.memories.name}</div>
+
+            <div className="memory__card">
+              <figure className="memory__card__fig">
+                <img src={data?.memories.coverImage.url} alt="" />
+                <figcaption>{data?.memories.name}</figcaption>
+              </figure>
+            </div>
+            <div className="memory__subheading">{data?.memories.about}</div>
+          </div>
+          <div className="memory__gallery-heading">Moments</div>
           <div className="container">
             <div className="box">
               {

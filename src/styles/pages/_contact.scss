@@ -315,7 +315,7 @@
 // }
 .contactme {
   width: auto;
-  height: calc(100vh - 8rem);
+  height: calc(100vh);
   // background-color: rebeccapurple;
   // background-color: black;
   // background: url(../../assets/9.svg);
@@ -324,6 +324,9 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  @media (max-width: 800px) {
+    justify-content: center;
+  }
   &__image {
     position: absolute;
     z-index: -1;
@@ -342,6 +345,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 800px) {
+      width: 600px;
+    }
+    @media (max-width: 400px) {
+      width: 95vw;
+    }
     // background-color: white;
     .form {
       width: 400px;
@@ -353,12 +362,18 @@
       &__heading {
         font-size: 2rem;
         position: relative;
+        @media (max-width: 400px) {
+          font-size: 1.5rem;
+        }
         &::after {
           position: absolute;
           content: "⟶";
           top: 40%;
           right: 3rem;
           transform: translateY(-50%);
+          @media (max-width: 400px) {
+            content: "";
+          }
         }
       }
       &__name,
@@ -378,10 +393,28 @@
       button {
         width: 100%;
         background-color: rgb(34, 33, 33);
-        color: white;
+        color: rgb(69, 68, 68);
         text-align: center;
-        padding: 1rem 2rem;
-        font-size: 1rem;
+        border: none;
+        text-align: right;
+        background-color: white;
+        padding: 0.5rem 0rem;
+        margin-top: 1rem;
+        font-size: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        gap: 10px;
+        &:hover {
+          background-color: rgb(172, 172, 172);
+        }
+        & > span {
+        }
+        & img {
+          width: 1.5em;
+          height: 1.5em;
+        }
       }
     }
   }
@@ -391,7 +424,9 @@
     $accent: #002a8f;
     $bluefade: #0043e0;
     $gradient: #00b5f5;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     @mixin transformScale($size: 1) {
       transform: scale($size);
       -ms-transform: scale($size);
@@ -435,8 +470,20 @@
           height: 50px;
           border-radius: 100%;
           display: block;
-          background: linear-gradient(45deg, $iconColor, $accent);
+          // background: linear-gradient(45deg, $iconColor, $accent);
+          background: linear-gradient(
+            to right,
+            #ac663f 0%,
+            27.470356225967407%,
+            #c07246 54.940712451934814%,
+            77.47035622596741%,
+            #a7623d 100%
+          );
           transition: all $timing ease-out;
+          @media (max-width: 400px) {
+            width: 35px;
+            height: 35px;
+          }
         }
 
         &:hover:before {
@@ -445,8 +492,8 @@
         }
 
         &:hover i {
-          @include transformScale(1.2);
-          color: $iconColor;
+          // @include transformScale(1.2);
+          color: black;
           background: -webkit-linear-gradient(45deg, $iconColor, $accent);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;

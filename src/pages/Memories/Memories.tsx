@@ -20,13 +20,13 @@ export const Memories = () => {
           {/* MEMO<span>RIES</span> */}
         </h1>
         <div className="memories__desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-          maximus justo ac felis accumsan, in imperdiet tellus pharetra. Duis a
-          dolor sed eros fermentum blandit quis quis odio. In luctus augue et
-          nunc dapibus molestie. Curabitur dapibus a mauris eu pulvinar.
-          Praesent vel risus sed felis gravida volutpat. In rutrum velit nec
-          erat commodo viverra. Nullam convallis tellus at interdum egestas.
-          Duis efficitur maximus dignissim.
+          Do you know one of the most expensive travel around the world? It's
+          traveling down the memory lane. Who doesn't want to live their "Dream
+          come true" moments again and again, and feel the ecstasy run through
+          their blood! Each moment we live becomes a memory for future times.
+          Photos becomes time capsules. Little precious moments that will be
+          captured within a frame, freezing those little smiles, shy looks,
+          tearful eyes, peaceful heart forever.
         </div>
         {loading && <Spinner />}
         {!loading && (

@@ -1,22 +1,27 @@
 import React from "react";
 import {
+  AiFillInstagram,
   AiFillLinkedin,
   AiFillTwitterCircle,
+  AiFillYoutube,
   AiOutlineWhatsApp,
 } from "react-icons/ai";
-import { SiGmail } from "react-icons/si";
+import { SiGmail, SiWhatsapp } from "react-icons/si";
 export const Footer = () => {
   return (
     <div className="footer">
       <p className="footer__link__name">My Social Media Links</p>
       <div className="footer__link">
-        <AiFillLinkedin color="lightblue" />
-        <AiOutlineWhatsApp color="green" />
-        <AiFillTwitterCircle color="lightblue" />
-        <SiGmail color="" />
+        <AiFillYoutube color="lightblue" />
+        <AiFillInstagram color="white" />
+        <SiWhatsapp color="white" />
       </div>
       <div className="footer__separator"></div>
-      <div className="footer__copyright">c Madhuraj Photography 2022</div>
+      <div className="footer__copyright">
+        <div> © Madhuraj Photography 2022</div>
+
+        <div>email@email.com</div>
+      </div>
     </div>
   );
 };
