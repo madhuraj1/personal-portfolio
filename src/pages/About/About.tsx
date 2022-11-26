@@ -26,11 +26,13 @@ export const About = () => {
                 {data?.aboutCollection.items[0].heading}
               </h4>
               <h4 className="about_details__sec1">
-                Hey, I am {data?.aboutCollection.items[0].name}
+                Hii,
+                <br /> I am {data?.aboutCollection.items[0].name}
               </h4>
 
               <p className="about_details__sec5">
                 {data?.aboutCollection.items[0].about.substring(19)}
+                <br />
               </p>
             </div>
             <div className="about__picture">
