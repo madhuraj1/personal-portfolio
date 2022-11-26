@@ -61,7 +61,7 @@ export const Contact = () => {
   //     notify("An error occured while submitting the form");
   //   }
   // };
-  const handlesubmit = (e) => {
+  const handlesubmit = (e: any) => {
     e.preventDefault();
     if (
       (formdata.email !== "",
