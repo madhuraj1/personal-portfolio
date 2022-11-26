@@ -1,36 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<urlset xmlns="https://www.madhurajphotography.com">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
-
       <loc>https://www.madhurajphotography.com/about/</loc>
-
    </url>
-
    <url>
-
       <loc>https://www.madhurajphotography.com/memories</loc>
- 
    </url>
-
    <url>
-
       <loc>https://www.madhurajphotography.com/contact</loc>
-
-
-
    </url>
-
    <url>
-
       <loc>https://www.madhurajphotography.com/films</loc>
-
-
-
       <priority>0.3</priority>
-
    </url>
-
-
 </urlset>
