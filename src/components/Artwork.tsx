@@ -5,11 +5,11 @@ export const Artwork = () => {
   return (
     <div className="art">
       <div className="art__heading">
-        <img src={Art} />
+        <img alt="Madhuraj Photography" src={Art} />
       </div>
       <div className="art__work">
         <div className="art__work--img">
-          <img src={Art2} />
+          <img alt="Madhuraj Photography" src={Art2} />
         </div>
 
         <p className="art__work-txt">

@@ -64,7 +64,10 @@ export const Memory = () => {
 
             <div className="memory__card">
               <figure className="memory__card__fig">
-                <img src={data?.memories.coverImage.url} alt="" />
+                <img
+                  src={data?.memories.coverImage.url}
+                  alt="Madhuraj Photography"
+                />
                 <figcaption>{data?.memories.name}</figcaption>
               </figure>
             </div>

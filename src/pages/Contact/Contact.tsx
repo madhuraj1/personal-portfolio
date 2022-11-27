@@ -144,7 +144,7 @@ export const Contact = () => {
               ) : (
                 <>
                   <span>Get in touch</span>
-                  <img src={Send} alt="" />
+                  <img src={Send} alt="send-btn" />
                 </>
               )}
             </button>
