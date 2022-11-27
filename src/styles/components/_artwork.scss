@@ -54,6 +54,13 @@
       line-height: 1.8em;
       text-align: justify;
       align-self: center;
+
+      & span {
+        display: block;
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
       @media (max-width: 54em) {
         width: 100%;
       }

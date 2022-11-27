@@ -1,6 +1,6 @@
 import React from "react";
 import Art from "../assets/Art4.png";
-import Art2 from "../assets/Art2.png";
+import Art2 from "../assets/art-min.png";
 export const Artwork = () => {
   return (
     <div className="art">
@@ -39,8 +39,10 @@ export const Artwork = () => {
           moment when you decided to spend the rest of your lives together. You
           surely have a great story and a great memory. Give us the opportunity
           to craft your emotions, to capture a million smiles that reflect
-          innocence in the face of true love. What's our story? Our story is
-          everything you want your story to be.
+          innocence in the face of true love.
+          <span>
+            What's our story? Our story is everything you want your story to be.
+          </span>
         </p>
       </div>
     </div>

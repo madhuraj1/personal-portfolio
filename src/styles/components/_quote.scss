@@ -6,12 +6,31 @@
     text-transform: uppercase;
     position: absolute;
     width: 100%;
-    bottom: 2rem;
+    bottom: 0rem;
     text-align: center;
     z-index: 55;
     color: rgb(4, 0, 0);
+    box-shadow: 2px 1px black;
     font-size: 32px;
+    height: 4rem;
     text-transform: capitalize;
+
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5858937324929971) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+
+    // text-shadow: 1rem 0rem 2rem rgb(24, 24, 24);
+    // color: white;
+    // mix-blend-mode: soft-light;
+    // filter: invert(1) grayscale(1) contrast(9);
+    // background: rgba(0, 0, 0, 0);
+    // border-radius: 16px;
+    // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    // backdrop-filter: blur(10.1px);
+    // -webkit-backdrop-filter: blur(10.1px);
     @media (max-width: 500px) {
       line-height: 10px;
     }
