@@ -49,6 +49,7 @@ export const Navbar = () => {
               className="navbar__links"
               style={style("/")}
               onClick={() => onclick("/")}
+              href="/"
             >
               Home
             </a>
@@ -56,6 +57,7 @@ export const Navbar = () => {
               style={style("/memories")}
               className="navbar__links"
               onClick={() => onclick("/memories")}
+              href="memories"
             >
               Memories
             </a>
@@ -63,6 +65,7 @@ export const Navbar = () => {
               style={style("/cinematography")}
               className="navbar__links"
               onClick={() => onclick("/films")}
+              href="films"
             >
               Films
             </a>
@@ -70,6 +73,7 @@ export const Navbar = () => {
               style={style("/about")}
               className="navbar__links"
               onClick={() => onclick("/about")}
+              href="about"
             >
               About
             </a>
@@ -78,17 +82,14 @@ export const Navbar = () => {
               style={style("/contact")}
               className="navbar__links"
               onClick={() => onclick("/contact")}
+              href="contact"
             >
               Contact
             </a>
           </nav>
         </div>
         <div className="navbar__content active">
-          <a
-            style={anchorStyle}
-            className="navbar__content-links"
-            href="/about"
-          >
+          <a style={anchorStyle} className="navbar__content-links" href="about">
             About
           </a>
           <a
