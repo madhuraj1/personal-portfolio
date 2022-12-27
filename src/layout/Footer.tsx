@@ -12,6 +12,7 @@ import { SiGmail, SiWhatsapp } from "react-icons/si";
 import { contactQuery } from "../schema/Query";
 import { IContact } from "../types/pages/Contact.types";
 export const Footer = () => {
+  const date = new Date();
   const { data } = useQuery<IContact>(contactQuery);
   const onClick = (link: string) => {
     window.open(link);
@@ -37,7 +38,10 @@ export const Footer = () => {
           <SiGmail color="white" />
         </a>
       </div>
-      <div style={{ fontSize: "14px" }}> © Madhuraj Photography 2022</div>
+      <div style={{ fontSize: "14px" }}>
+        {" "}
+        © Madhuraj Photography {date.getFullYear()}
+      </div>
       <div className="footer__separator"></div>
       <div className="footer__copyright">
         <div>
