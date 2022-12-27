@@ -33,10 +33,9 @@ export const Footer = () => {
           }
           color="white"
         />
-        <SiGmail
-          onClick={() => onClick(data?.contactCollection.items[0].email ?? "")}
-          color="white"
-        />
+        <a href={`mailto:${data?.contactCollection.items[0].email ?? ""}`}>
+          <SiGmail color="white" />
+        </a>
       </div>
       <div style={{ fontSize: "14px" }}> © Madhuraj Photography 2022</div>
       <div className="footer__separator"></div>
