@@ -16,19 +16,18 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-import { useState } from "react";
-import { Quote } from "./Quote";
-
-// import "./styles.css";
+import { useEffect, useState } from "react";
 
 export const Carousel = () => {
   const { data, loading, error } = useQuery<Data>(Carouselquery);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
+  useEffect(() => {});
   return (
     <>
       <Swiper
         style={{
-          paddingTop: "6rem",
+          paddingTop: "50px",
         }}
         slidesPerView={"auto"}
         allowTouchMove={true}
@@ -51,9 +50,15 @@ export const Carousel = () => {
           Mousewheel,
           Autoplay,
         ]}
+        slideActiveClass="swiper-slide-active-custom"
+        slideBlankClass="swiper-slide-notactive-custom"
+        // slideClass="swiper-slide-notactive-custom"
+        onSlideChangeTransitionStart={(s) => {
+          console.log(s);
+        }}
         className="mySwiper"
       >
-        <Quote />
+        {/* <Quote /> */}
         {loading && (
           <div className="carousel__spinner">
             <Spinner />
@@ -64,7 +69,11 @@ export const Carousel = () => {
             return (
               <SwiperSlide key={data.order} className="swiper-slide">
                 {/* <div> */}
-                <img alt={"Madhuraj Photography"} src={data.imageBase64.url} />
+                <img
+                  alt={"Madhuraj Photography"}
+                  loading="eager"
+                  src={data.imageBase64.url}
+                />
                 {/* </div> */}
               </SwiperSlide>
             );

@@ -9,20 +9,23 @@ import { Contact } from "./pages/Contact/Contact";
 import { Cinematography } from "./pages/Cinematography/Cinematography";
 import "./App.css";
 import { Footer } from "./layout/Footer";
+import { Gallery } from "./pages/Galllery/Gallery";
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/memories" element={<Memories />}></Route>
-        <Route path="memories/:id" element={<Memory />} />
-        <Route path="about" element={<About />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="films" element={<Cinematography />} />
-      </Routes>
+    <>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/memories" element={<Gallery />}></Route>
+          <Route path="memories/:id" element={<Memory />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="films" element={<Cinematography />} />
+        </Routes>
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }
 

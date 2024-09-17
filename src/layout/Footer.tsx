@@ -11,6 +11,7 @@ import {
 import { SiGmail, SiWhatsapp } from "react-icons/si";
 import { contactQuery } from "../schema/Query";
 import { IContact } from "../types/pages/Contact.types";
+import { FiInstagram, FiYoutube } from "react-icons/fi";
 export const Footer = () => {
   const date = new Date();
   const { data } = useQuery<IContact>(contactQuery);
@@ -19,40 +20,21 @@ export const Footer = () => {
   };
   return (
     <div className="footer">
-      <p className="footer__link__name">My Social Media Links</p>
-
-      <div className="footer__link">
-        <AiFillYoutube
-          onClick={() =>
-            onClick(data?.contactCollection.items[0].youtube ?? "")
-          }
-          color="lightblue"
-        />
-        <AiFillInstagram
-          onClick={() =>
-            onClick(data?.contactCollection.items[0].instagram ?? "")
-          }
-          color="white"
-        />
-        <a href={`mailto:${data?.contactCollection.items[0].email ?? ""}`}>
-          <SiGmail color="white" />
-        </a>
+      <p className="footer__link__name">CONNECT</p>
+      <div className="footer__icons">
+        <FiYoutube />
+        <FiInstagram />
+        <SiWhatsapp />
+        <SiGmail />
       </div>
-      <div style={{ fontSize: "14px" }}>
-        {" "}
-        © Madhuraj Photography {date.getFullYear()}
+      <div className="footer__links">
+        <p>HOME</p>
+        <p>ABOUT US</p>
+        <p>CONTACT</p>
+        <p>FILMS</p>
       </div>
-      <div className="footer__separator"></div>
-      <div className="footer__copyright">
-        <div>
-          <AiOutlineWhatsApp style={{ marginTop: "5px" }} />
-          {data?.contactCollection.items[0].number}
-        </div>
-        <div>
-          <AiOutlineMail style={{ marginTop: "5px" }} />
-          {data?.contactCollection.items[0].email}
-        </div>
-      </div>
+      <span className="footer__divider" />
+      <p className="footer__copyright">@2023 Celebration Chapters</p>
     </div>
   );
 };

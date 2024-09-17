@@ -8,20 +8,21 @@ import { Data } from "../../types/pages/Home.types";
 import { MinimalFooter } from "../../layout/MinimalFooter";
 import { Artwork } from "../../components/Artwork";
 import { Footer } from "../../layout/Footer";
+import { DynamicCarousel } from "../../components/DynamicCarousel";
+import { Video } from "../../components/Video";
+import { GetInTouch } from "../../components/GetInTouch";
+import { FindUs } from "../../components/FindUs";
+
 export const Home = () => {
   const { data, loading } = useQuery<Data>(QuoteQuery);
   return (
     <>
       <main className="home">
-        {/* <div className="quote">
-          <q>
-            {data?.quoteCollection.items[0].quote.slice(0, 15)}
-            <span>{data?.quoteCollection.items[0].quote.slice(15)}</span>
-          </q>
-        </div> */}
-
         <Carousel />
-        <Artwork />
+        <Video />
+        <GetInTouch />
+        {/* <FindUs /> */}
+        {/* <Artwork /> */}
       </main>
       {/* <Footer /> */}
     </>

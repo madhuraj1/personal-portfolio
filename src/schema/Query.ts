@@ -112,3 +112,19 @@ export const getMemoriesdById = gql`
     }
   }
 `;
+
+export const getGalleryQuery = gql`
+  query galleryQuery {
+    galleryCollection {
+      items {
+        introduction
+        imagedForGalleryCollection {
+          items {
+            url
+            height
+          }
+        }
+      }
+    }
+  }
+`;

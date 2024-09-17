@@ -1,35 +1,31 @@
 export interface Memory {
-    memoriesCollection: MemoriesCollection;
+  memoriesCollection: MemoriesCollection;
 }
 
 export interface MemoriesCollection {
-    items: MemoriesCollectionItem[];
+  items: MemoriesCollectionItem[];
 }
-
 
 export interface MemoriesCollectionItem {
-    sys:{ id:string;}
-    name: string;
-    about:string;
-    coverImage: CoverImage;
-    memoryCollectionCollection: MemoryCollectionCollection;
+  sys: { id: string };
+  name: string;
+  about: string;
+  coverImage: CoverImage;
+  memoryCollectionCollection: MemoryCollectionCollection;
 }
-export interface GetMemoryById  {
-    memories : MemoriesCollectionItem
+export interface GetMemoryById {
+  memories: MemoriesCollectionItem;
 }
 export interface CoverImage {
-    fileName: string;
-    url:      string;
-   
+  fileName: string;
+  url: string;
 }
 
 export interface MemoryCollectionCollection {
-    items: MemoryCollectionCollectionItem[];
+  items: MemoryCollectionCollectionItem[];
 }
 
 export interface MemoryCollectionCollectionItem {
-    url: string;
-    width: string;
+  url: string;
+  height: number;
 }
-
-
