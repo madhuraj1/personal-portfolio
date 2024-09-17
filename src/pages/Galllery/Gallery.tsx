@@ -35,7 +35,7 @@ export const Gallery = () => {
 
         function allotSlots(slots: number) {
           const arbitrarySlots = [];
-          const storageSlots: Array<Array<number>> = [];
+          const storageSlots: Array<Array<string>> = [];
           for (let i = 0; i < slots; i++) {
             arbitrarySlots.push({ index: i, height: 0 });
             storageSlots.push([]);

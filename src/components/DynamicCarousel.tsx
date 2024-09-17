@@ -8,7 +8,7 @@ export const DynamicCarousel = () => {
   const [images, setImage] = useState([]);
   const { loading, error } = useQuery<Data>(Carouselquery, {
     onCompleted: (data) => {
-      const collection = [];
+      const collection: any = [];
       data.slideshowCollection.items.map((im) => {
         collection.push({
           original: im.imageBase64.url,

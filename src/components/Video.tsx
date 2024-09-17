@@ -1,28 +1,27 @@
-import React from "react";
 import VideoShort from "../assets/video.mp4";
-import Image from "../assets/Logo-new.png";
-import { useGSAP } from "@gsap/react";
-import gsap, { Linear } from "gsap";
-import horizontalLoop from "../utils/helpers";
+// import Image from "../assets/Logo-new.png";
+// import { useGSAP } from "@gsap/react";
+// import gsap, { Linear } from "gsap";
+// import horizontalLoop from "../utils/helpers";
 import { Heading } from "./Heading";
 
 export const Video = () => {
-  useGSAP(() => {
-    gsap.utils.toArray(".find_us-wrapper").forEach((line, i) => {
-      const links = line.querySelectorAll(".find_us-item"),
-        tl = horizontalLoop(links, {
-          repeat: -1,
-          speed: 1 + i * 0.5,
-          paddingRight: parseFloat(
-            gsap.getProperty(links[0], "marginRight", "px")
-          ), // otherwise first element would be right up against the last when it loops. In this layout, the spacing is done with marginRight.
-        });
-      links.forEach((link) => {
-        link.addEventListener("mouseenter", () => tl.pause());
-        link.addEventListener("mouseleave", () => tl.resume());
-      });
-    });
-  });
+  // useGSAP(() => {
+  //   gsap.utils.toArray(".find_us-wrapper").forEach((line, i) => {
+  //     const links = line.querySelectorAll(".find_us-item"),
+  //       tl = horizontalLoop(links, {
+  //         repeat: -1,
+  //         speed: 1 + i * 0.5,
+  //         paddingRight: parseFloat(
+  //           gsap.getProperty(links[0], "marginRight", "px")
+  //         ), // otherwise first element would be right up against the last when it loops. In this layout, the spacing is done with marginRight.
+  //       });
+  //     links.forEach((link) => {
+  //       link.addEventListener("mouseenter", () => tl.pause());
+  //       link.addEventListener("mouseleave", () => tl.resume());
+  //     });
+  //   });
+  // });
   return (
     <>
       <div className="quote--slide">
