@@ -1,49 +1,37 @@
-import VideoShort from "../assets/video.mp4";
-// import Image from "../assets/Logo-new.png";
-// import { useGSAP } from "@gsap/react";
-// import gsap, { Linear } from "gsap";
-// import horizontalLoop from "../utils/helpers";
-import { Heading } from "./Heading";
+import { Heading } from './Heading';
 
-export const Video = () => {
-  // useGSAP(() => {
-  //   gsap.utils.toArray(".find_us-wrapper").forEach((line, i) => {
-  //     const links = line.querySelectorAll(".find_us-item"),
-  //       tl = horizontalLoop(links, {
-  //         repeat: -1,
-  //         speed: 1 + i * 0.5,
-  //         paddingRight: parseFloat(
-  //           gsap.getProperty(links[0], "marginRight", "px")
-  //         ), // otherwise first element would be right up against the last when it loops. In this layout, the spacing is done with marginRight.
-  //       });
-  //     links.forEach((link) => {
-  //       link.addEventListener("mouseenter", () => tl.pause());
-  //       link.addEventListener("mouseleave", () => tl.resume());
-  //     });
-  //   });
-  // });
+interface Props {
+  video: string;
+}
+
+export const Video = (props: Props) => {
   return (
-    <>
-      <div className="quote--slide">
+    <div className="mb-24">
+      <div className="xs:pl mt-24 flex flex-col items-center justify-center gap-4 bg-[#f3f0eb] py-8 text-center text-3xl font-light uppercase [&_p]:xs:px-4 [&_p]:xs:text-lg [&_p]:sm:text-3xl">
         <p>❝</p>
         <p>"Photography is the simplest thing in the world, </p>
         <p>but it is incredibly complicated to make it really work."</p>
-        <span>- Martin Parr</span>
+        <span className="text-sm font-thin">- Martin Parr</span>
       </div>
-
-      <div className="video">
-        <Heading className="">GET A GLIMPSE</Heading>
-        <p className="video__info">
+      <div className="relative mx-12 mt-12 bg-white sm:mx-24 sm:mt-24">
+        <Heading className="font-medium">GET A GLIMPSE</Heading>
+        <p className="md:text-md pb-8 xs:text-sm xs:font-normal sm:text-lg md:font-normal">
           Photography is the simplest thing in the world, but it is incredibly
           complicated to make it really work
         </p>
-        <div className="video__logo">
-          <video autoPlay muted loop id="myVideo">
-            <source src={VideoShort} type="video/mp4" />
+        <div className="mx-auto h-full w-full overflow-hidden">
+          <video
+            autoPlay
+            muted
+            loop
+            id="myVideo"
+            className="object-fit -z-1 bottom-0 left-0 right-0 w-full p-0"
+          >
+            <source src={props.video} type="video/mp4" />
             Your browser does not support HTML5 video.
           </video>
         </div>
       </div>
-    </>
+    </div>
   );
 };

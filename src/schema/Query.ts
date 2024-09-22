@@ -128,3 +128,24 @@ export const getGalleryQuery = gql`
     }
   }
 `;
+
+export const HomepageVideoQuery = gql`
+  {
+    homePageCollection {
+      items {
+        filmsSection {
+          url
+        }
+        getInTouchCarouselImagesCollection {
+          items {
+            url
+          }
+        }
+        portraitImageForBackground {
+          url
+        }
+        getInTouchText
+      }
+    }
+  }
+`;

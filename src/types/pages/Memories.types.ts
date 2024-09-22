@@ -29,3 +29,30 @@ export interface MemoryCollectionCollectionItem {
   url: string;
   height: number;
 }
+
+export interface HomepageVideo {
+  data: HomePageData;
+}
+
+export interface HomePageData {
+  homePageCollection: HomePageCollection;
+}
+
+export interface HomePageCollection {
+  items: Item[];
+}
+
+export interface Item {
+  getInTouchText: string;
+  filmsSection: FilmsSection;
+  portraitImageForBackground: FilmsSection;
+  getInTouchCarouselImagesCollection: GetInTouchCarouselImagesCollection;
+}
+
+export interface FilmsSection {
+  url: string;
+}
+
+export interface GetInTouchCarouselImagesCollection {
+  items: FilmsSection[];
+}
