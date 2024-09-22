@@ -30,6 +30,9 @@ export const MobileNavBar = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef as any);
+  const closeNav = () => {
+    toggleOpen();
+  };
 
   return (
     <motion.nav
@@ -40,7 +43,7 @@ export const MobileNavBar = () => {
       ref={containerRef}
     >
       <motion.div className="background" variants={sidebar} />
-      <Navigation />
+      <Navigation close={closeNav} />
       <MenuToggle toggle={() => toggleOpen()} />
     </motion.nav>
   );

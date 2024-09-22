@@ -111,14 +111,14 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   }, [emblaApi, tweenScale]);
 
   return (
-    <div className="embla max-w-[calc(100vw-1rem)] md:max-w-[calc(100vw-20rem)]">
+    <div className="embla 2xl:max-w-[1440px)] max-w-[calc(100vw-1rem)] md:max-w-[calc(100vw-5rem)] lg:max-w-[calc(100vw-10rem)] xl:max-w-[calc(100vw-10rem)]">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {data &&
             data.slideshowCollection.items.map((itm, index) => (
               <div className="embla__slide" key={index}>
                 <img
-                  className="embla__slide__img embla__slide__number h-[300px] sm:h-[calc(100vh-10rem)]"
+                  className="embla__slide__img embla__slide__number h-[300px] sm:h-[400px] md:h-[500px] lg:h-[100vh-20rem] xl:h-[calc(100vh-10rem)]"
                   src={itm.imageBase64.url}
                   alt="Celebration Chapters"
                 />

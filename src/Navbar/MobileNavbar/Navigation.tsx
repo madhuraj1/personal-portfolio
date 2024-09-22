@@ -1,6 +1,6 @@
-import * as React from "react";
-import { motion } from "framer-motion";
-import { MenuItem } from "./MenuItem";
+import * as React from 'react';
+import { motion } from 'framer-motion';
+import { MenuItem } from './MenuItem';
 
 const variants = {
   open: {
@@ -11,12 +11,38 @@ const variants = {
   },
 };
 
-export const Navigation = () => (
+export const Navigation = ({ close }: { close: () => void }) => (
   <motion.ul className="mobile_nav__ullist" variants={variants}>
     {itemIds.map((i) => (
-      <MenuItem i={i} key={i} />
+      <MenuItem close={close} i={i.i} key={i.i} text={i.text} to={i.to} />
     ))}
   </motion.ul>
 );
 
-const itemIds = [0, 1, 2, 3, 4];
+const itemIds = [
+  {
+    i: 0,
+    text: 'Home',
+    to: '/',
+  },
+  {
+    i: 1,
+    text: 'About Us',
+    to: '/about',
+  },
+  {
+    i: 2,
+    text: 'Memories',
+    to: '/memories',
+  },
+  {
+    i: 3,
+    text: 'Films',
+    to: '/films',
+  },
+  {
+    i: 4,
+    text: 'Contact',
+    to: '/contact',
+  },
+];
