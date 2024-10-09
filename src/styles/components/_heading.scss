@@ -7,15 +7,19 @@
   margin-bottom: 2rem;
   position: relative;
 
+  &::first-letter {
+    font-weight: normal;
+  }
+
   &::after {
     width: 100px;
     height: 5px;
-    content: "";
+    content: '';
     // margin-left: 100px;
     left: 0px;
     border-radius: 10px;
     position: absolute;
-    top: 110%;
+    top: 140%;
     background-color: #c6b9b9;
   }
 }

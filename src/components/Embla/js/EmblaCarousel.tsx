@@ -88,7 +88,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           const tweenNode = tweenNodes.current[slideIndex];
           console.log(tweenNode);
 
-          tweenNode.style.transform = `scale(${scale})`;
+          // tweenNode.style.transform = `scale(${scale})`;
         });
       });
     },
@@ -111,14 +111,17 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   }, [emblaApi, tweenScale]);
 
   return (
-    <div className="embla 2xl:max-w-[1440px)] max-w-[calc(100vw-1rem)] md:max-w-[calc(100vw-5rem)] lg:max-w-[calc(100vw-10rem)] xl:max-w-[calc(100vw-10rem)]">
+    <div className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {data &&
             data.slideshowCollection.items.map((itm, index) => (
-              <div className="embla__slide" key={index}>
+              <div
+                className="embla__slide h-auto w-screen md:h-[calc(100vh+5rem)]"
+                key={index}
+              >
                 <img
-                  className="embla__slide__img embla__slide__number h-[300px] sm:h-[400px] md:h-[500px] lg:h-[100vh-20rem] xl:h-[calc(100vh-10rem)]"
+                  className="embla__slide__img embla__slide__number h-full w-full object-cover"
                   src={itm.imageBase64.url}
                   alt="Celebration Chapters"
                 />
@@ -131,3 +134,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 };
 
 export default EmblaCarousel;
+
+// 2xl:max-w-[1440px)] max-w-[calc(100vw-1rem)] md:max-w-[calc(100vw-5rem)] lg:max-w-[calc(100vw-10rem)] xl:max-w-[calc(100vw-10rem)]
+
+// embla slide
+// h-[300px] sm:h-[400px] md:h-[500px] lg:h-[100vh-20rem] xl:h-[calc(100vh-10rem)]

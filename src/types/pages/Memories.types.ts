@@ -47,6 +47,7 @@ export interface Item {
   filmsSection: FilmsSection;
   portraitImageForBackground: FilmsSection;
   getInTouchCarouselImagesCollection: GetInTouchCarouselImagesCollection;
+  filmsSectionText: string;
 }
 
 export interface FilmsSection {

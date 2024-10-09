@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
 export const Aboutquery = gql`
   query About {
@@ -91,6 +91,19 @@ export const cinemaQuery = gql`
   }
 `;
 
+export const filmsQuery = gql`
+  query FilmsCollection {
+    filmsIntroductionCollection {
+      items {
+        introductionText
+        filmsVideo {
+          url
+        }
+      }
+    }
+  }
+`;
+
 export const getMemoriesdById = gql`
   query Memories($id: String!) {
     memories(id: $id) {
@@ -145,6 +158,7 @@ export const HomepageVideoQuery = gql`
           url
         }
         getInTouchText
+        filmsSectionText
       }
     }
   }

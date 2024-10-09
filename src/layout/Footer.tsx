@@ -1,8 +1,9 @@
 import { Facebook, Github, Instagram, Twitter } from 'lucide-react';
 import Logo1 from '../assets/Logo-new.png';
+import { FORM_URL } from '@/utils/urls';
 export const Footer = () => {
   return (
-    <footer className="bg-white px-4 py-10 sm:px-6 lg:px-8">
+    <footer className="font-metropolis bg-white px-4 py-10 sm:px-6 lg:px-8">
       <div className="mx-auto px-8">
         <div className="flex flex-col justify-between md:flex-row">
           <div className="flex flex-col items-start">
@@ -11,7 +12,10 @@ export const Footer = () => {
                 <img src={Logo1} alt="Celebration Chapters" />
               </div>
             </div>
-            <button className="mb-12 mt-4 rounded-full bg-black px-6 py-2 font-semibold text-white transition duration-300 hover:bg-lime-500">
+            <button
+              onClick={() => window.open(FORM_URL, '_blank')}
+              className="mb-12 mt-4 rounded-full bg-black px-6 py-2 font-semibold text-white transition duration-300 hover:bg-lime-500"
+            >
               Get Quote
             </button>
           </div>

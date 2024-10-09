@@ -12,7 +12,6 @@
 .embla__container {
   display: flex;
   touch-action: pan-y pinch-zoom;
-  margin-left: calc(var(--slide-spacing) * -1);
 }
 .embla__slide {
   transform: translate3d(0, 0, 0);
@@ -22,7 +21,7 @@
 }
 .embla__slide__img {
   display: block;
-  height: var(--slide-height);
+
   width: 100%;
   aspect-ratio: auto;
   object-fit: cover;
@@ -102,7 +101,7 @@
   border-radius: 50%;
   display: flex;
   align-items: center;
-  content: "";
+  content: '';
 }
 .embla__dot--selected:after {
   box-shadow: inset 0 0 0 0.2rem var(--text-body);

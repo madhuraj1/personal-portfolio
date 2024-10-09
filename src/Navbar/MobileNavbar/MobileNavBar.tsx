@@ -36,7 +36,7 @@ export const MobileNavBar = () => {
 
   return (
     <motion.nav
-      className="mobile_navigation_bar"
+      className="mobile_navigation_bar h-screen"
       initial={false}
       animate={isOpen ? 'open' : 'closed'}
       custom={height}

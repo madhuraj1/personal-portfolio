@@ -1,15 +1,17 @@
-import { useQuery } from "@apollo/client";
-import { useState } from "react";
-import { Spinner } from "../../components/Spinner";
-import { cinemaQuery } from "../../schema/Query";
-import { ICinema } from "../../types/pages/Cinema.types";
-import Video from "../../assets/video.mp4";
-import Logo from "../../assets/Logo-new.png";
+import { useQuery } from '@apollo/client';
+import { useState } from 'react';
+import { Spinner } from '../../components/Spinner';
+import { cinemaQuery, filmsQuery } from '../../schema/Query';
+import {
+  FilmsIntroductionCollection,
+  ICinema,
+} from '../../types/pages/Cinema.types';
+import Logo from '../../assets/Logo-new.png';
 
-import Carousel from "react-spring-3d-carousel";
-import { config } from "@react-spring/web";
-import LeftArrow from "../../assets/Keyboard arrow left.svg";
-import RightArrow from "../../assets/Keyboard arrow right.svg";
+import Carousel from 'react-spring-3d-carousel';
+import { config } from '@react-spring/web';
+import LeftArrow from '../../assets/Keyboard arrow left.svg';
+import RightArrow from '../../assets/Keyboard arrow right.svg';
 
 export const Cinematography = () => {
   const [slidesData, setSlidesData] = useState<
@@ -17,6 +19,7 @@ export const Cinematography = () => {
   >([]);
   const [currentSlide, setCurrentSlide] = useState<number>(1);
   const [length, setLength] = useState(0);
+  const { data } = useQuery<FilmsIntroductionCollection>(filmsQuery);
   const { loading } = useQuery<ICinema>(cinemaQuery, {
     onCompleted: (res) => {
       const slides: { key: string; content: string }[] = [];
@@ -49,25 +52,27 @@ export const Cinematography = () => {
   };
 
   return (
-    <div className="films">
+    <div className="films mt-0 md:mt-24">
       <div className="films__video">
-        <video src={Video} autoPlay muted loop id="myVideo">
+        <video
+          src={data?.filmsIntroductionCollection?.items[0]?.filmsVideo?.url}
+          autoPlay
+          muted
+          loop
+          id="myVideo"
+        >
           <source type="video/mp4" />
           Your browser does not support HTML5 video.
         </video>
-        <div className="films__logo">
+        <div className="films__logo hidden md:block">
           <img src={Logo} alt="Home" />
         </div>
       </div>
-      <div className="films__heading">
-        <h4>My Cinematic Films</h4>
-        <div className="films__heading--underline"></div>
-        <div className="films__heading--desc">
-          A filmy thing that happens everytime and the reaseon for being such a
-          vague trauma and some other things. A filmy thing that happens
-          everytime and the reaseon for being such a vague trauma and some other
-          things. A filmy thing that happens everytime and the reaseon for being
-          such a vague trauma and some other things
+      <div className="mx-auto max-w-[1500px] pt-20">
+        <h4 className="font-century py-8 text-start text-5xl">Films</h4>
+
+        <div className="font-metropolis text-md">
+          {data?.filmsIntroductionCollection?.items[0]?.introductionText}
         </div>
       </div>
       {loading && <Spinner />}

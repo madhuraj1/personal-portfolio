@@ -43,7 +43,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className="embla__container">
           {getInTouchCarouselImagesCollection &&
             getInTouchCarouselImagesCollection.items.map((itm, index) => (
-              <div className="embla__slide" key={index}>
+              <div className="embla__slide h-screen" key={index}>
                 <img
                   className="embla__slide__img embla__slide__number h-full"
                   src={itm.url}

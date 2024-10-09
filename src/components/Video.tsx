@@ -2,22 +2,21 @@ import { Heading } from './Heading';
 
 interface Props {
   video: string;
+  text: string;
 }
 
 export const Video = (props: Props) => {
   return (
     <div className="mb-24">
-      <div className="xs:pl mt-24 flex flex-col items-center justify-center gap-4 bg-[#f3f0eb] py-8 text-center text-3xl font-light uppercase [&_p]:xs:px-4 [&_p]:xs:text-lg [&_p]:sm:text-3xl">
+      <div className="font-century xs:pl mt-24 flex flex-col items-center justify-center gap-4 bg-[#f3f0eb] py-8 text-center text-3xl font-light uppercase [&_p]:xs:px-4 [&_p]:xs:text-lg [&_p]:sm:text-3xl">
         <p>❝</p>
         <p>"Photography is the simplest thing in the world, </p>
         <p>but it is incredibly complicated to make it really work."</p>
         <span className="text-sm font-thin">- Martin Parr</span>
       </div>
       <div className="relative mx-12 mt-12 bg-white sm:mx-24 sm:mt-24">
-        <Heading className="font-medium">GET A GLIMPSE</Heading>
-        <p className="md:text-md pb-8 xs:text-sm xs:font-normal sm:text-lg md:font-normal">
-          Photography is the simplest thing in the world, but it is incredibly
-          complicated to make it really work
+        <p className="font-metropolis md:text-md pb-8 xs:text-sm xs:font-normal sm:text-lg md:font-normal">
+          {props.text}
         </p>
         <div className="mx-auto h-full w-full overflow-hidden">
           <video
