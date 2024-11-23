@@ -1,5 +1,3 @@
-import { Heading } from './Heading';
-
 interface Props {
   video: string;
   text: string;

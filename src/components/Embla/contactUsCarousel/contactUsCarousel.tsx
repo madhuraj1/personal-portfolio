@@ -20,11 +20,7 @@ type PropType = {
 };
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const {
-    options,
-    portraitImageForBackground,
-    getInTouchCarouselImagesCollection,
-  } = props;
+  const { options, getInTouchCarouselImagesCollection } = props;
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {

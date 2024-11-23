@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { motion } from 'framer-motion';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -19,8 +18,6 @@ const variants = {
   },
 };
 
-const colors = ['#FF008C', '#D309E1', '#9C1AFF', '#7700FF', '#4400FF'];
-
 export const MenuItem = ({
   i,
   text,
@@ -32,7 +29,6 @@ export const MenuItem = ({
   to: string;
   close: () => void;
 }) => {
-  const style = { border: `2px solid ${colors[i]}` };
   const navigate = useNavigate();
   const loc = useLocation();
   console.log(loc.pathname);

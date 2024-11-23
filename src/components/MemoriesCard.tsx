@@ -1,9 +1,6 @@
-import axios from "axios";
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { MemoriesCollectionItem } from "../types/pages/Memories.types";
-import { Button } from "./Button";
-import { FiArrowRightCircle } from "react-icons/fi";
+import { useNavigate } from 'react-router-dom';
+import { MemoriesCollectionItem } from '../types/pages/Memories.types';
+import { FiArrowRightCircle } from 'react-icons/fi';
 export const MemoriesCard = (props: {
   image: any;
   data: MemoriesCollectionItem;
@@ -19,11 +16,11 @@ export const MemoriesCard = (props: {
       }}
     >
       <figure className="memcard__fig">
-        <img alt={"Madhuraj Photography"} src={props.image}></img>
+        <img alt={'Madhuraj Photography'} src={props.image}></img>
         <figcaption className="memcard__caption">
           <div className="memcard__details">
-            <p style={{ visibility: "hidden" }}>
-              {props.number < 9 ? "0" + props.number : props.number}
+            <p style={{ visibility: 'hidden' }}>
+              {props.number < 9 ? '0' + props.number : props.number}
             </p>
             <FiArrowRightCircle />
           </div>

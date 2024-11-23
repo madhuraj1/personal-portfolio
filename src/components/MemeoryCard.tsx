@@ -1,5 +1,3 @@
-import React from "react";
-
 export const MemoryCard = (props: { image: any }) => {
   return (
     <li className="memorycard">
