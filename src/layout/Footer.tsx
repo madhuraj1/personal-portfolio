@@ -1,12 +1,4 @@
-import {
-  Facebook,
-  Github,
-  Instagram,
-  Mail,
-  Twitter,
-  Youtube,
-} from 'lucide-react';
-import Logo1 from '../assets/WEBSITE_NAME_PNG_BLACK.png';
+import { Instagram, Mail, Youtube } from 'lucide-react';
 
 export const Footer = () => {
   const date = new Date();

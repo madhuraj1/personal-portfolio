@@ -18,9 +18,6 @@ type PropType = {
 };
 const TWEEN_FACTOR_BASE = 0.08;
 
-const numberWithinRange = (number: number, min: number, max: number): number =>
-  Math.min(Math.max(number, min), max);
-
 const EmblaCarousel: React.FC<PropType> = (props) => {
   const { options } = props;
   const { data } = useQuery<Data>(Carouselquery);
@@ -83,8 +80,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
             });
           }
 
-          const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current);
-          const scale = numberWithinRange(tweenValue, 0, 1).toString();
+          // const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current);
+          // const scale = numberWithinRange(tweenValue, 0, 1).toString();
           const tweenNode = tweenNodes.current[slideIndex];
           console.log(tweenNode);
 
@@ -134,8 +131,3 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 };
 
 export default EmblaCarousel;
-
-// 2xl:max-w-[1440px)] max-w-[calc(100vw-1rem)] md:max-w-[calc(100vw-5rem)] lg:max-w-[calc(100vw-10rem)] xl:max-w-[calc(100vw-10rem)]
-
-// embla slide
-// h-[300px] sm:h-[400px] md:h-[500px] lg:h-[100vh-20rem] xl:h-[calc(100vh-10rem)]

@@ -1,14 +1,9 @@
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-import Logo1 from '../assets/new_logo.png';
 import { MobileNavBar } from './MobileNavbar/MobileNavBar';
 
 export const Navbar = () => {
   const router = useNavigate();
   const loc = useLocation();
-
-  const onclick = (path: string) => {
-    router(path);
-  };
 
   const activeClass = ({ isActive }: { isActive: boolean }) => {
     if (isActive) {

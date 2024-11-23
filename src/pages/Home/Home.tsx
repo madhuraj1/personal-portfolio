@@ -4,7 +4,7 @@ import { Data } from '../../types/pages/Home.types';
 import { Video } from '../../components/Video';
 
 import EmblaCarousel from '../../components/Embla/js/EmblaCarousel';
-import { HomePageData, HomepageVideo } from '../../types/pages/Memories.types';
+import { HomePageData } from '../../types/pages/Memories.types';
 import { Spinner } from '../../components/Spinner';
 import CelebrationChapter from '../../components/BookACall';
 import { Helmet } from 'react-helmet';
