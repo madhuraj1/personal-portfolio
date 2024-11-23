@@ -19,6 +19,10 @@ function App() {
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:site_name" content="Celebration Chapters" />
+        <meta
+          name="google-site-verification"
+          content="PciObAIFUSMiTGLcBy3MXo0biGXph8pe1bP7uW5g6jc"
+        />
       </Helmet>
       <div className="App">
         <Navbar />
