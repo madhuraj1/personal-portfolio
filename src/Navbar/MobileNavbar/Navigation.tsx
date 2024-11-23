@@ -11,8 +11,17 @@ const variants = {
   },
 };
 
-export const Navigation = ({ close }: { close: () => void }) => (
-  <motion.ul className="mobile_nav__ullist" variants={variants}>
+export const Navigation = ({
+  close,
+  open,
+}: {
+  close: () => void;
+  open: boolean;
+}) => (
+  <motion.ul
+    className={`mobile_nav__ullist ${open ? 'z-10' : '-z-10'}`}
+    variants={variants}
+  >
     {itemIds.map((i) => (
       <MenuItem close={close} i={i.i} key={i.i} text={i.text} to={i.to} />
     ))}
@@ -32,8 +41,8 @@ const itemIds = [
   },
   {
     i: 2,
-    text: 'Memories',
-    to: '/memories',
+    text: 'Photos',
+    to: '/photos',
   },
   {
     i: 3,

@@ -117,7 +117,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           {data &&
             data.slideshowCollection.items.map((itm, index) => (
               <div
-                className="embla__slide h-auto w-screen md:h-[calc(100vh+5rem)]"
+                className="embla__slide h-[calc(100vh+5rem)] w-screen"
                 key={index}
               >
                 <img

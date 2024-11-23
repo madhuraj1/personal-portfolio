@@ -12,27 +12,26 @@ export const Navbar = () => {
 
   const activeClass = ({ isActive }: { isActive: boolean }) => {
     if (isActive) {
-      if (loc.pathname === '/' || loc.pathname === '/about') {
+      if (loc.pathname === '/') {
         return 'text-white underline underline-offset-4 font-medium hover:font-bold';
       }
       return 'text-black underline underline-offset-4 font-medium hover:font-bold';
     }
-    if (loc.pathname === '/' || loc.pathname === '/about') {
+    if (loc.pathname === '/') {
       return 'text-white hover:font-bold';
     }
     return 'text-black hover:font-bold';
   };
+
   return (
-    <div className="font-metropolis absolute left-0 right-0 top-0 z-50 mt-2">
+    <div className="absolute left-0 right-0 top-0 z-50 mt-2 font-century">
       <nav className="flex items-center justify-between px-6 py-4">
         <div className="text-xl font-bold">
           <NavLink to="/" className="">
-            <div className="w-56">
-              <img
-                src={Logo1}
-                alt="Celebration Photography"
-                className="z-50 h-full w-full object-fill"
-              />
+            <div
+              className={`px-6 pt-3 font-metropolis font-medium tracking-widest xs:text-[14px] sm:text-[16px] lg:pt-2 lg:text-[18px] ${loc.pathname === '/' ? 'text-white' : 'text-black'}`}
+            >
+              CELEBRATION CHAPTERS
             </div>
           </NavLink>
         </div>
@@ -43,8 +42,8 @@ export const Navbar = () => {
           <NavLink to="/about" className={activeClass}>
             About us
           </NavLink>
-          <NavLink to="/memories" className={activeClass}>
-            Memories
+          <NavLink to="/photos" className={activeClass}>
+            Photos
           </NavLink>
           <NavLink to="/films" className={activeClass}>
             Films
@@ -53,7 +52,7 @@ export const Navbar = () => {
             Contact Us
           </NavLink>
         </div>
-        <div className="sm:hidden">
+        <div className="md:hidden">
           <MobileNavBar />
         </div>
         {/* <button className="bg-black text-white hover:bg-gray-800">Sign up</button> */}

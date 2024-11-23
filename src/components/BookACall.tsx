@@ -15,7 +15,7 @@ interface Props {
 export default function CelebrationChapter(props: Props) {
   const nav = useNavigate();
   return (
-    <div className="relative -z-10">
+    <div className="relative">
       <div className="relative mb-24 flex items-center justify-center overflow-hidden py-56">
         <div className="touch__carousel absolute inset-0 z-[-1] overflow-hidden xs:hidden md:block">
           <EmblaCarousel slides={[]} {...props} />
@@ -28,13 +28,13 @@ export default function CelebrationChapter(props: Props) {
           />
         </div>
         <div className="mx-4 w-full rounded-2xl bg-white bg-opacity-40 p-12 py-24 text-center shadow-lg md:w-[min(80%,900px)] md:rounded-[100px]">
-          <h1 className="font-century mx-auto mb-6 font-serif text-4xl md:w-3/4 md:text-5xl lg:text-6xl">
+          <h1 className="font-serif mx-auto mb-6 font-metropolis text-4xl md:w-3/4 md:text-5xl lg:text-6xl">
             LET'S CELEBRATE TOGETHER
           </h1>
-          <p className="font-metropolis text-md mx-auto mb-8 flex items-center justify-center md:w-3/4">
+          <p className="text-md mx-auto mb-8 flex items-center justify-center font-century md:w-3/4">
             {props.getInTouchText}
           </p>
-          <div className="font-metropolis flex items-center justify-center gap-4 xs:flex-col sm:flex-row">
+          <div className="flex items-center justify-center gap-4 font-century xs:flex-col sm:flex-row">
             <button
               onClick={() => window.open(FORM_URL, '_blank')}
               className="cursor-pointer rounded-full bg-white px-8 py-3 text-lg text-black transition-colors hover:bg-slate-300 xs:w-full sm:w-auto"

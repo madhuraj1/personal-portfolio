@@ -9,6 +9,7 @@ import { MenuToggle } from './MobileTogle';
 const sidebar = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+
     transition: {
       type: 'spring',
       stiffness: 20,
@@ -17,6 +18,7 @@ const sidebar = {
   }),
   closed: {
     clipPath: 'circle(30px at 40px 40px)',
+
     transition: {
       delay: 0.5,
       type: 'spring',
@@ -42,9 +44,12 @@ export const MobileNavBar = () => {
       custom={height}
       ref={containerRef}
     >
-      <motion.div className="background" variants={sidebar} />
-      <Navigation close={closeNav} />
-      <MenuToggle toggle={() => toggleOpen()} />
+      <motion.div
+        className={isOpen ? 'background-black' : 'background'}
+        variants={sidebar}
+      />
+      <Navigation open={isOpen} close={closeNav} />
+      <MenuToggle toggle={() => toggleOpen()} open={isOpen} />
     </motion.nav>
   );
 };

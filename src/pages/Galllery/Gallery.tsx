@@ -4,14 +4,6 @@ import { getGalleryQuery } from '../../schema/Query';
 import { Spinner } from '../../components/Spinner';
 import { GalleryImageCollection } from '../../types/pages/Gallery.types';
 
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog';
 export const Gallery = () => {
   const [itemsPerRow, setItemsPerRow] = useState(0);
   const [row, setRow] = useState(1);
@@ -97,10 +89,17 @@ export const Gallery = () => {
   return (
     <>
       <div className="gallery">
-        <h1 className="py-4 text-center text-5xl">Memories</h1>
-        <div className="pb-8 text-center">
-          {data?.galleryCollection.items[0].introduction}
+        <div className={'flex flex-row'}>
+          <div className={'flex flex-col px-4'}>
+            <h1 className="py-4 text-left font-metropolis text-5xl">
+              Memories
+            </h1>
+            <div className="pb-8 text-justify font-century">
+              {data?.galleryCollection.items[0].introduction}
+            </div>
+          </div>
         </div>
+
         <div className="gallery__wrapper">
           {rowData?.map((i, index) => {
             return (

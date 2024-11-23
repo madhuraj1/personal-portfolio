@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const variants = {
   open: {
@@ -34,6 +34,9 @@ export const MenuItem = ({
 }) => {
   const style = { border: `2px solid ${colors[i]}` };
   const navigate = useNavigate();
+  const loc = useLocation();
+  console.log(loc.pathname);
+
   return (
     <motion.li
       onClick={() => {
@@ -45,7 +48,14 @@ export const MenuItem = ({
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
-      <div className="text-placeholder text-md font-medium">{text}</div>
+      <div
+        style={{
+          fontWeight: loc.pathname === to ? 'bold' : 'normal',
+        }}
+        className="text-placeholder text-md font-medium"
+      >
+        {text}
+      </div>
     </motion.li>
   );
 };

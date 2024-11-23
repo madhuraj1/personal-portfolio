@@ -16,7 +16,7 @@ export const Home = () => {
   if (loading || videoloading || !data || !videoData) return <Spinner />;
   return (
     <>
-      <main className="home mt-20 md:-mt-20">
+      <main className="-mt-20">
         {/* <Carousel /> */}
         <EmblaCarousel
           slides={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]}

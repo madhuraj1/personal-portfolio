@@ -58,6 +58,7 @@ export const Cinematography = () => {
           src={data?.filmsIntroductionCollection?.items[0]?.filmsVideo?.url}
           autoPlay
           muted
+          playsInline
           loop
           id="myVideo"
         >
@@ -68,10 +69,10 @@ export const Cinematography = () => {
           <img src={Logo} alt="Home" />
         </div>
       </div>
-      <div className="mx-auto max-w-[1500px] pt-20">
-        <h4 className="font-century py-8 text-start text-5xl">Films</h4>
+      <div className="mx-auto max-w-[1500px] px-4 lg:py-16 lg:pt-20">
+        <h4 className="xs py-8 text-start font-metropolis text-5xl">Films</h4>
 
-        <div className="font-metropolis text-md">
+        <div className="text-md font-century">
           {data?.filmsIntroductionCollection?.items[0]?.introductionText}
         </div>
       </div>
