@@ -1,315 +1,294 @@
-import React, { useState } from "react";
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 import {
-  SiBehance,
-  SiFacebook,
-  SiGmail,
-  SiInstagram,
-  SiTwitter,
-  SiWhatsapp,
-  SiYoutube,
-} from "react-icons/si";
-import email from "../../assets/email.png";
-import location from "../../assets/location.png";
-import phone from "../../assets/phone.png";
-import shape from "../../assets/shape.png";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { MinimalFooter } from "../../layout/MinimalFooter";
-import { useQuery } from "@apollo/client";
-import { contactQuery } from "../../schema/Query";
-import { IContact } from "../../types/pages/Contact.types";
-import ContactImage from ".././../assets/contact.jpg";
-import Send from "../../assets/send.svg";
+  MapPinIcon,
+  PhoneIcon,
+  LetterText,
+  CircleArrowOutUpRightIcon,
+} from 'lucide-react';
+import location from '@/assets/location_map.png';
+import ContactImage from '.././../assets/contact.jpg';
+import { Separator } from '@/components/ui/separator';
+import { FORM_URL } from '@/utils/urls';
+import * as z from 'zod';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
+
+const formSchema = z.object({
+  name: z.string().min(2, {
+    message: 'Name must be at least 2 characters.',
+  }),
+  email: z.string().email({
+    message: 'Please enter a valid email address.',
+  }),
+  phone: z.string().min(10, {
+    message: 'Phone number must be at least 10 digits.',
+  }),
+  description: z.string().min(10, {
+    message: 'Description must be at least 10 characters.',
+  }),
+});
+
 export const Contact = () => {
-  const { data } = useQuery<IContact>(contactQuery);
-
-  const [contact, setContact] = useState({
-    name: "",
-    email: "",
-    contact: "",
-    subject: "StaticForms - Contact Form",
-    honeypot: "", // if any value received in this field, form submission will be ignored.
-    message: "",
-    replyTo: "@", // this will set replyTo of email to email address entered in the form
-    accessKey: "6af45e78-b803-4a42-9a03-054b9d010602", // get your access key from https://www.staticforms.xyz
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      phone: '',
+      description: '',
+    },
   });
-  const notify = (message: string) => toast(message);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setContact({ ...contact, [e.target.name]: e.target.value });
-
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   try {
-  //     console.log(contact);
-
-  //     const res = await fetch("https://api.staticforms.xyz/submit", {
-  //       method: "POST",
-  //       body: JSON.stringify(contact),
-  //       headers: { "Content-Type": "application/json" },
-  //     });
-
-  //     const json = await res.json();
-  //     console.log(json);
-
-  //     if (json.success) {
-  //       notify("Thank you for reaching out to us.");
-  //     } else {
-  //       notify("Error while sending");
-  //     }
-  //   } catch (e) {
-  //     notify("An error occured while submitting the form");
-  //   }
-  // };
-  const handlesubmit = (e: any) => {
-    e.preventDefault();
-    if (
-      (formdata.email !== "",
-      formdata.message !== "",
-      formdata.name !== "",
-      formdata.phone !== "")
-    ) {
-      const formData = new FormData();
-      setLoading(true);
-      formData.append("name", formdata.name);
-      formData.append("email", formdata.email);
-      formData.append("phone", formdata.phone);
-      formData.append("message", formdata.message);
-      fetch("https://www.actionforms.io/e/r/madhurajphotography", {
-        method: "POST",
-        body: formData,
-      })
-        .then((res) => {
-          setLoading(false);
-          if (res.status === 200) {
-            notify("Succesfully recieved");
-          }
-        })
-        .catch((err) => {
-          setLoading(false);
-        });
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    // You can replace this with your form submission logic
+    const res = await fetch(
+      'https://ymbqprhmdkzzxpsepiuu.supabase.co/functions/v1/store-messages',
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          name: values.name,
+          email: values.email,
+          number: values.phone,
+          message: values.description,
+        }),
+      }
+    );
+    if (res.status === 200) {
+      alert('Message sent successfully!');
+      form.reset();
     }
+  }
+  const handleMapClick = () => {
+    window.open('https://maps.app.goo.gl/WcmVqQZMpvHnCezTA?g_st=iw', '_blank');
   };
-  const [formdata, setformdata] = useState<{
-    name: string;
-    email: string;
-    phone: string;
-    message: string;
-  }>({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setformdata((form) => {
-      return { ...form, [e.target.name]: e.target.value };
-    });
-  };
-  const [loading, setLoading] = useState<boolean>(false);
   return (
-    <>
-      <div className="contactme">
-        <div className="contactme__image">
-          <img src={ContactImage} alt="" />
-        </div>
-        <div className="contactme__form">
-          <form
-            className="form"
-            // action="https://www.actionforms.io/e/r/madhurajphotography"
-            // method="POST"
-            target=""
-            onSubmit={handlesubmit}
-          >
-            <div className="form__heading">Details About You</div>
-            <div className="form__name">
-              <label htmlFor="">Name</label>
-              <input onChange={onChange} name="name" required type="text" />
-            </div>
-            <div className="form__email">
-              <label htmlFor="">Email</label>
-              <input onChange={onChange} required name="email" type="email" />
-            </div>
-            <div className="form__number">
-              <label htmlFor="">Phone Number</label>
-              <input onChange={onChange} name="phone" required type="tel" />
-            </div>
-            <div className="form__message">
-              <label htmlFor="">Message</label>
-              <input onChange={onChange} name="message" required type="text" />
-            </div>
-            <button type="submit">
-              {loading ? (
-                <span>Please Wait...</span>
-              ) : (
-                <>
-                  <span>Get in touch</span>
-                  <img src={Send} alt="send-btn" />
-                </>
-              )}
-            </button>
-            <div className="contactme__social-container">
-              <ul className="social-icons">
-                <li>
-                  <a
-                    onClick={() =>
-                      window.open(data?.contactCollection.items[0].instagram)
-                    }
-                  >
-                    <i className="fa fa-instagram">
-                      <SiInstagram />
-                    </i>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i
-                      onClick={() =>
-                        window.open(data?.contactCollection.items[0].youtube)
-                      }
-                      className="fa fa-twitter"
-                    >
-                      <SiYoutube />
-                    </i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    onClick={() => {
-                      navigator.clipboard.writeText(
-                        data?.contactCollection.items[0].number || ""
-                      );
-                      notify("Number Copied to clipbord");
-                    }}
-                    href="#"
-                  >
-                    <i className="fa fa-linkedin">
-                      <SiWhatsapp />
-                    </i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    onClick={() => {
-                      navigator.clipboard.writeText(
-                        data?.contactCollection.items[0].email || ""
-                      );
-                      notify("Gmail Copied to clipbord");
-                    }}
-                    href="#"
-                  >
-                    <i className="fa fa-codepen">
-                      <SiGmail />
-                    </i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </form>
-        </div>
-
-        {/* <span className="big-circle"></span> */}
-        {/* <img src={shape} className="square" alt="" />
-        <div className="form">
-          <div className="contact-info">
-            <h3 className="title">Let's get in touch</h3>
-            <p className="text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-              dolorum adipisci recusandae praesentium dicta!
-            </p>
-
-            <div className="info">
-              <div className="information">
-                <img src={location} className="icon" alt="" />
-                <p>{data?.contactCollection.items[0].address}</p>
-              </div>
-              <div className="information">
-                <img src={email} className="icon" alt="" />
-                <p>{data?.contactCollection.items[0].email}</p>
-              </div>
-              <div className="information">
-                <img src={phone} className="icon" alt="" />
-                <p>{data?.contactCollection.items[0].number}</p>
-              </div>
-            </div>
-
-            <div className="social-media">
-              <p>Connect with us :</p>
-              <div className="social-icons">
-                <a href={data?.contactCollection.items[0].instagram}>
-                  <SiFacebook />
-                </a>
-                <a href="#">
-                  <SiTwitter
-                    href={data?.contactCollection.items[0].instagram}
-                  />
-                </a>
-                <a href="#">
-                  <SiInstagram
-                    href={data?.contactCollection.items[0].instagram}
-                  />
-                </a>
-                <a href="#">
-                  <SiBehance
-                    href={data?.contactCollection.items[0].instagram}
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="contact-form">
-            <span className="circle one"></span>
-            <span className="circle two"></span>
-
-            <form
-              onSubmit={handleSubmit}
-              action="index.html"
-              autoComplete="off"
-            >
-              <h3 className="title">Contact us</h3>
-              <div className="input-container">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                  className="input"
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="input-container">
-                <input
-                  type="email"
-                  placeholder="Email"
-                  name="email"
-                  className="input"
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="input-container">
-                <input
-                  type="tel"
-                  placeholder="Phone number"
-                  name="contact"
-                  className="input"
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="input-container textarea">
-                <input
-                  name="message"
-                  placeholder="Message"
-                  className="input"
-                  type={""}
-                  onChange={handleChange}
-                ></input>
-              </div>
-              <input type="submit" value="Send" className="btn" />
-            </form>
-          </div>
-        </div> */}
-        <ToastContainer />
+    <div className="relative mt-24 flex min-h-[calc(100vh+200px)] items-center justify-center md:mt-0">
+      <div className="-z-1 absolute h-full w-full xs:hidden md:block">
+        <img src={ContactImage} alt="" className="h-full w-full" />
       </div>
-    </>
+      <div className="relative z-10 mx-auto max-w-6xl rounded-lg bg-white bg-opacity-80 py-24 shadow-lg xs:w-[calc(100vw-2rem)] xs:p-4 sm:p-12 md:w-8/12">
+        <h1 className="mb-6 text-center font-metropolis text-3xl font-bold">
+          Contact Us!
+        </h1>
+        <p className="mb-8 text-center font-century text-gray-600">
+          The promise to "get back to you as soon as possible" assures prompt
+          attention to inquiries.
+        </p>
+
+        <div className="flex flex-col gap-8 font-century md:flex-row">
+          <div className="w-full md:w-1/2">
+            <Form {...form}>
+              <form
+                className="space-y-4"
+                onSubmit={form.handleSubmit(onSubmit)}
+              >
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel
+                        htmlFor="name"
+                        className="block text-sm font-medium text-gray-700"
+                      >
+                        Your Name *
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          id="name"
+                          placeholder="Name"
+                          required
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel
+                        htmlFor="email"
+                        className="block text-sm font-medium text-gray-700"
+                      >
+                        Email *
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          id="email"
+                          type="email"
+                          placeholder="Email"
+                          required
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel
+                        htmlFor="phone"
+                        className="block text-sm font-medium text-gray-700"
+                      >
+                        Phone Number *
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          id="phone"
+                          type="tel"
+                          placeholder="Phone"
+                          required
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="description"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel
+                        htmlFor="description"
+                        className="block text-sm font-medium text-gray-700"
+                      >
+                        Description *
+                      </FormLabel>
+                      <FormControl>
+                        <Textarea
+                          id="description"
+                          placeholder="Message"
+                          required
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <Button
+                  type="submit"
+                  variant="ghost"
+                  className="w-full bg-black text-white"
+                >
+                  Send
+                </Button>
+
+                {/* <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Your Name *
+                  </label>
+                  <Input id="name" placeholder="Name" required />
+                </div>
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Email *
+                  </label>
+                  <Input id="email" type="email" placeholder="Email" required />
+                </div>
+                <div>
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Phone Number *
+                  </label>
+                  <Input id="phone" type="tel" placeholder="Phone" required />
+                </div>
+                <div>
+                  <label
+                    htmlFor="description"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Description *
+                  </label>
+                  <Textarea id="description" placeholder="Message" required />
+                </div>
+                <Button
+                  variant={'ghost'}
+                  className="w-full bg-black text-white"
+                >
+                  Send
+                </Button> */}
+              </form>
+            </Form>
+          </div>
+
+          <div className="w-full space-y-4 md:w-1/2">
+            <div className="flex items-center space-x-2 text-gray-600">
+              <PhoneIcon className="h-5 w-5 text-orange-500" />
+              <span>+91 9611809088 / 9632559088</span>
+            </div>
+            <div className="flex items-center space-x-2 text-gray-600">
+              <LetterText className="h-5 w-5 text-orange-500" />
+              <span>celebrationchapters@gmail.com</span>
+            </div>
+            <div className="flex items-center space-x-2 text-gray-600">
+              <MapPinIcon className="h-5 w-5 text-orange-500" />
+              <span>
+                Dr MV shetty Building, near RTO office, Old kent road
+                Mangaluru-575001
+              </span>
+            </div>
+            <div className="h-64 rounded-lg bg-gray-300">
+              {/* Replace with actual map component or embed */}
+              <div
+                onClick={handleMapClick}
+                className="flex h-full w-full cursor-pointer items-center justify-center rounded-3xl text-gray-500"
+              >
+                <img
+                  src={location}
+                  alt="Map"
+                  className="h-full w-full rounded-2xl object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="pt-8">
+          <Separator className="bg-black/40" />
+        </div>
+        <div className="w-full py-8 text-center">
+          <h1 className="text-center font-metropolis text-3xl font-bold">
+            Ready for your story?
+          </h1>
+
+          <Button
+            onClick={() => window.open(FORM_URL, '_blank')}
+            variant={'ghost'}
+            className="mx-auto my-4 w-fit rounded-2xl border border-black px-6 py-5 font-century hover:border-white"
+          >
+            Let's get started
+            <CircleArrowOutUpRightIcon className="ml-2 h-4 w-4" />
+          </Button>
+        </div>
+      </div>
+    </div>
   );
 };

@@ -1,124 +1,62 @@
-import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import Logo1 from "../assets/Logo3.png";
-import Logo2 from "../assets/Logo2.svg";
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import Logo1 from '../assets/new_logo.png';
+import { MobileNavBar } from './MobileNavbar/MobileNavBar';
 
 export const Navbar = () => {
-  const [isactive, setisactive] = useState<boolean>(false);
   const router = useNavigate();
   const loc = useLocation();
 
   const onclick = (path: string) => {
-    setisactive(false);
     router(path);
   };
-  const style = (path: string) => {
-    return { textDecoration: loc.pathname === path ? "line-through" : "none" };
-  };
-  const anchorStyle = {
-    color: loc.pathname !== "/" ? "black" : "black",
-  };
-  return (
-    <>
-      <div className="navbar">
-        {/* <div> */}
-        <div>
-          <input
-            className="navbar__input"
-            type="checkbox"
-            id="navcheck"
-            role="button"
-            title="menu"
-            checked={isactive}
-            onChange={(e) => setisactive(e.target.checked)}
-          />
-          <label
-            className="navbar__label"
-            htmlFor="navcheck"
-            aria-hidden="true"
-            title="menu"
-          >
-            <span className="burger">
-              <span className="bar">
-                <span className="visuallyhidden">Menu</span>
-              </span>
-            </span>
-          </label>
-          <nav className="navbar__nav" id="menu">
-            <a
-              className="navbar__links"
-              style={style("/")}
-              onClick={() => onclick("/")}
-              href="/"
-            >
-              Home
-            </a>
-            <a
-              style={style("/memories")}
-              className="navbar__links"
-              onClick={() => onclick("/memories")}
-              href="memories"
-            >
-              Memories
-            </a>
-            <a
-              style={style("/cinematography")}
-              className="navbar__links"
-              onClick={() => onclick("/films")}
-              href="films"
-            >
-              Films
-            </a>
-            <a
-              style={style("/about")}
-              className="navbar__links"
-              onClick={() => onclick("/about")}
-              href="about"
-            >
-              About
-            </a>
 
-            <a
-              style={style("/contact")}
-              className="navbar__links"
-              onClick={() => onclick("/contact")}
-              href="contact"
+  const activeClass = ({ isActive }: { isActive: boolean }) => {
+    if (isActive) {
+      if (loc.pathname === '/') {
+        return 'text-white underline underline-offset-4 font-medium hover:font-bold';
+      }
+      return 'text-black underline underline-offset-4 font-medium hover:font-bold';
+    }
+    if (loc.pathname === '/') {
+      return 'text-white hover:font-bold';
+    }
+    return 'text-black hover:font-bold';
+  };
+
+  return (
+    <div className="absolute left-0 right-0 top-0 z-50 mt-2 font-century">
+      <nav className="flex items-center justify-between px-6 py-4">
+        <div className="text-xl font-bold">
+          <NavLink to="/" className="">
+            <div
+              className={`px-6 pt-3 font-metropolis font-medium tracking-widest xs:text-[14px] sm:text-[16px] lg:pt-2 lg:text-[18px] ${loc.pathname === '/' ? 'text-white' : 'text-black'}`}
             >
-              Contact
-            </a>
-          </nav>
+              CELEBRATION CHAPTERS
+            </div>
+          </NavLink>
         </div>
-        <div className="navbar__content active">
-          <a style={anchorStyle} className="navbar__content-links" href="about">
-            About
-          </a>
-          <a
-            style={anchorStyle}
-            className="navbar__content-links"
-            href="memories"
-          >
-            Memories
-          </a>
-          <img
-            alt="Madhuraj Photography"
-            onClick={() => router("/")}
-            className="navbar__logo"
-            src={Logo1}
-          />
-          <a style={anchorStyle} className="navbar__content-links" href="films">
+        <div className="hidden items-center space-x-6 text-white md:flex">
+          <NavLink to="/" className={activeClass}>
+            Home
+          </NavLink>
+          <NavLink to="/about" className={activeClass}>
+            About us
+          </NavLink>
+          <NavLink to="/photos" className={activeClass}>
+            Photos
+          </NavLink>
+          <NavLink to="/films" className={activeClass}>
             Films
-          </a>
-          <a
-            style={anchorStyle}
-            className="navbar__content-links"
-            href="contact"
-          >
-            Contact
-          </a>
+          </NavLink>
+          <NavLink to="/contact" className={activeClass}>
+            Contact Us
+          </NavLink>
         </div>
-        <div></div>
-      </div>
-      {/* </div> */}
-    </>
+        <div className="md:hidden">
+          <MobileNavBar />
+        </div>
+        {/* <button className="bg-black text-white hover:bg-gray-800">Sign up</button> */}
+      </nav>
+    </div>
   );
 };

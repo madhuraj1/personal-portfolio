@@ -18,6 +18,7 @@
     padding: 0rem 4rem;
     object-fit: cover;
     margin-bottom: 3rem;
+
     @media (max-width: 37.5em) {
       height: 75vh;
     }
@@ -40,6 +41,7 @@
       height: 100%;
       // background-color: rgb(101, 120, 218);
       color: white;
+      // background-color: #f3f0eb;
       position: relative;
     }
     @media (max-width: 600px) {
@@ -79,23 +81,24 @@
     display: flex;
     align-items: center;
     // transform: translateY(-50%);
-    color: rgb(0, 0, 0);
+    color: transparent;
     font-size: 2rem;
     border-radius: 50%;
+
     & > span {
       font-size: 1rem;
-      color: rgba($color: #000000, $alpha: 0.6);
+      color: transparent;
     }
   }
   &__controls--right {
     display: flex;
     align-items: center;
     font-size: 2rem;
-    color: rgb(0, 0, 0);
+    color: transparent;
     border-radius: 50%;
     & > span {
       font-size: 1rem;
-      color: rgba($color: #000000, $alpha: 0.6);
+      color: transparent;
     }
   }
 }
@@ -153,7 +156,7 @@
   height: 100%;
   & > &-button-prev {
     z-index: 10;
-    color: white;
+    color: transparent;
     @media (max-width: 600px) {
       top: 65%;
     }
@@ -162,7 +165,7 @@
     }
   }
   & > &-button-next {
-    color: white;
+    color: transparent;
     &::after {
       font-size: 20px;
     }
@@ -193,16 +196,33 @@
 }
 .swiper-slide img {
   display: block;
-  width: 100vw;
-  height: calc(100vh);
+  width: 100%;
+  margin-inline: 6rem;
+
+  height: calc(100vh - 150px);
   object-fit: cover;
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     aspect-ratio: auto;
-    height: auto;
+    height: 400px;
+    margin-inline: 0rem;
+  }
+}
+.swiper-pagination {
+  @media (max-width: 650px) {
+    display: none;
   }
 }
 
 .swiper {
   margin-left: auto;
   margin-right: auto;
+}
+.swiper-slide-active-custom {
+  transform: scale(1);
+  transition: all 0.4s linear;
+}
+
+.swiper-slide-notactive-custom {
+  transform: scale(0.9);
+  transition: all 0.4s linear;
 }

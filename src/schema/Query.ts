@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
 export const Aboutquery = gql`
   query About {
@@ -91,6 +91,19 @@ export const cinemaQuery = gql`
   }
 `;
 
+export const filmsQuery = gql`
+  query FilmsCollection {
+    filmsIntroductionCollection {
+      items {
+        introductionText
+        filmsVideo {
+          url
+        }
+      }
+    }
+  }
+`;
+
 export const getMemoriesdById = gql`
   query Memories($id: String!) {
     memories(id: $id) {
@@ -108,6 +121,44 @@ export const getMemoriesdById = gql`
           url
           height
         }
+      }
+    }
+  }
+`;
+
+export const getGalleryQuery = gql`
+  query galleryQuery {
+    galleryCollection {
+      items {
+        introduction
+        imagedForGalleryCollection {
+          items {
+            url
+            height
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const HomepageVideoQuery = gql`
+  {
+    homePageCollection {
+      items {
+        filmsSection {
+          url
+        }
+        getInTouchCarouselImagesCollection {
+          items {
+            url
+          }
+        }
+        portraitImageForBackground {
+          url
+        }
+        getInTouchText
+        filmsSectionText
       }
     }
   }

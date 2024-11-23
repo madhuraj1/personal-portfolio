@@ -1,0 +1,25 @@
+.heading__underline {
+  font-size: 2.5rem;
+  font-weight: 200;
+  text-align: start;
+  padding-top: 1rem;
+  // padding-left: 100px;
+  margin-bottom: 2rem;
+  position: relative;
+
+  &::first-letter {
+    font-weight: normal;
+  }
+
+  &::after {
+    width: 100px;
+    height: 5px;
+    content: '';
+    // margin-left: 100px;
+    left: 0px;
+    border-radius: 10px;
+    position: absolute;
+    top: 140%;
+    background-color: #c6b9b9;
+  }
+}

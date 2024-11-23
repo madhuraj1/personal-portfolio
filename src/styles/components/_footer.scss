@@ -1,45 +1,84 @@
 .footer {
   width: 100%;
-  background-color: black;
+  background-color: #323232;
   display: flex;
   align-items: center;
   justify-content: center;
+  // position: absolute;
+  // bottom: 0;
   flex-direction: column;
-  padding-top: 6rem;
+  padding-top: 2rem;
   gap: 10px;
-  & > * {
-    color: white;
-  }
+  font-weight: 300;
+
   &__link__name {
-    text-transform: uppercase;
-    font-size: 1rem;
-    font-weight: bold;
+    color: white;
     text-align: center;
-    margin-bottom: 20px;
+    font-size: 1.1rem;
   }
-  &__link {
+  &__icons {
     display: flex;
-    gap: 15px;
-    font-size: 2rem;
-    margin-bottom: 10px;
+    color: white;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    padding-top: 20px;
   }
-  &__separator {
+
+  &__links {
+    display: flex;
+    color: white;
+    gap: 50px;
+    margin-top: 2rem;
+    align-items: center;
+  }
+
+  &__divider {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.237);
+    color: #ececec;
     height: 1px;
     width: 100%;
-    background-color: rgb(121, 120, 120);
+    margin-top: 20px;
   }
   &__copyright {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    gap: 10px;
-    & div {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
+    color: white;
+    padding: 20px 10px;
   }
+  // & > * {
+  //   color: white;
+  // }
+  // &__link__name {
+  //   text-transform: uppercase;
+  //   font-size: 1rem;
+  //   font-weight: bold;
+  //   text-align: center;
+  //   margin-bottom: 20px;
+  // }
+  // &__link {
+  //   display: flex;
+  //   gap: 15px;
+  //   font-size: 2rem;
+  //   margin-bottom: 10px;
+  // }
+  // &__separator {
+  //   height: 1px;
+  //   width: 100%;
+  //   background-color: rgb(121, 120, 120);
+  // }
+  // &__copyright {
+  //   display: flex;
+  //   justify-content: center;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   padding: 20px 0;
+  //   gap: 10px;
+  //   & div {
+  //     display: flex;
+  //     align-items: center;
+  //     justify-content: center;
+  //     gap: 10px;
+  //   }
+  // }
 }
