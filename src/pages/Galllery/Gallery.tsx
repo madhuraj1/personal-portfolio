@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { getGalleryQuery } from '../../schema/Query';
 import { Spinner } from '../../components/Spinner';
 import { GalleryImageCollection } from '../../types/pages/Gallery.types';
+import { Helmet } from 'react-helmet';
 
 export const Gallery = () => {
   const [itemsPerRow, setItemsPerRow] = useState(0);
@@ -88,6 +89,26 @@ export const Gallery = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Photos - Celebration Chapters</title>
+        <meta property="og:title" content="Photos - Celebration Chapters" />
+        <meta
+          property="og:description"
+          content="Explore our stunning photo gallery. Capturing your precious moments with beauty and precision."
+        />
+        <meta
+          property="og:url"
+          content="https://www.celebrationchapters.com/photos"
+        />
+        <meta
+          property="og:image"
+          content="https://images.ctfassets.net/waibrswxyq0p/3RdXYtqHGWLEGox3EM7fLQ/50aa517250d9da1819f6c43f9bea7a1f/CCP-343.jpg"
+        />
+        <meta
+          property="og:image:alt"
+          content="A collection of professional photos by Celebration Chapters"
+        />
+      </Helmet>
       <div className="gallery">
         <div className={'flex flex-row'}>
           <div className={'flex flex-col px-4'}>

@@ -12,6 +12,7 @@ import Carousel from 'react-spring-3d-carousel';
 import { config } from '@react-spring/web';
 import LeftArrow from '../../assets/Keyboard arrow left.svg';
 import RightArrow from '../../assets/Keyboard arrow right.svg';
+import { Helmet } from 'react-helmet';
 
 export const Cinematography = () => {
   const [slidesData, setSlidesData] = useState<
@@ -52,55 +53,77 @@ export const Cinematography = () => {
   };
 
   return (
-    <div className="films mt-0 md:mt-24">
-      <div className="films__video">
-        <video
-          src={data?.filmsIntroductionCollection?.items[0]?.filmsVideo?.url}
-          autoPlay
-          muted
-          playsInline
-          loop
-          id="myVideo"
-        >
-          <source type="video/mp4" />
-          Your browser does not support HTML5 video.
-        </video>
-        <div className="films__logo hidden md:block">
-          <img src={Logo} alt="Home" />
+    <>
+      <Helmet>
+        <title>Films - Celebration Chapters</title>
+        <meta property="og:title" content="Films - Celebration Chapters" />
+        <meta
+          property="og:description"
+          content="Relive your most treasured moments with Celebration Chapters' heartfelt films. Watch our portfolio now!"
+        />
+        <meta
+          property="og:url"
+          content="https://www.celebrationchapters.com/films"
+        />
+        <meta
+          property="og:image"
+          content="https://images.ctfassets.net/waibrswxyq0p/3RdXYtqHGWLEGox3EM7fLQ/50aa517250d9da1819f6c43f9bea7a1f/CCP-343.jpg"
+        />
+        <meta
+          property="og:image:alt"
+          content="A heartfelt film by Celebration Chapters"
+        />
+      </Helmet>
+      <div className="films mt-0 md:mt-24">
+        <div className="films__video">
+          <video
+            src={data?.filmsIntroductionCollection?.items[0]?.filmsVideo?.url}
+            autoPlay
+            muted
+            playsInline
+            loop
+            id="myVideo"
+          >
+            <source type="video/mp4" />
+            Your browser does not support HTML5 video.
+          </video>
+          <div className="films__logo hidden md:block">
+            <img src={Logo} alt="Home" />
+          </div>
         </div>
-      </div>
-      <div className="mx-auto max-w-[1500px] px-4 lg:py-16 lg:pt-20">
-        <h4 className="xs py-8 text-start font-metropolis text-5xl">Films</h4>
+        <div className="mx-auto max-w-[1500px] px-4 lg:py-16 lg:pt-20">
+          <h4 className="xs py-8 text-start font-metropolis text-5xl">Films</h4>
 
-        <div className="text-md font-century">
-          {data?.filmsIntroductionCollection?.items[0]?.introductionText}
+          <div className="text-md font-century">
+            {data?.filmsIntroductionCollection?.items[0]?.introductionText}
+          </div>
         </div>
+        {loading && <Spinner />}
+        {!loading && (
+          <>
+            <div className="films__carousel">
+              <Carousel
+                goToSlide={currentSlide}
+                slides={slidesData}
+                animationConfig={config.stiff}
+                showNavigation={true}
+              />
+            </div>
+            <div className="films__button">
+              <button onClick={prevSlide} className="films__button-right">
+                <img src={LeftArrow} alt="Left Arrow" />
+              </button>
+              <p className="films__button-indicator">
+                {currentSlide}/{length}
+              </p>
+              <button onClick={nextSlide} className="films__button-left">
+                <img src={RightArrow} alt="Right Arrow" />
+              </button>
+            </div>
+          </>
+        )}
       </div>
-      {loading && <Spinner />}
-      {!loading && (
-        <>
-          <div className="films__carousel">
-            <Carousel
-              goToSlide={currentSlide}
-              slides={slidesData}
-              animationConfig={config.stiff}
-              showNavigation={true}
-            />
-          </div>
-          <div className="films__button">
-            <button onClick={prevSlide} className="films__button-right">
-              <img src={LeftArrow} alt="Left Arrow" />
-            </button>
-            <p className="films__button-indicator">
-              {currentSlide}/{length}
-            </p>
-            <button onClick={nextSlide} className="films__button-left">
-              <img src={RightArrow} alt="Right Arrow" />
-            </button>
-          </div>
-        </>
-      )}
-    </div>
+    </>
     // <>
     //   <div className="films">
     //     <h1 className="films__heading">Films</h1>

@@ -9,10 +9,17 @@ import { Contact } from './pages/Contact/Contact';
 import { Cinematography } from './pages/Cinematography/Cinematography';
 import './App.css';
 import { Footer } from './layout/Footer';
+import { Helmet } from 'react-helmet';
+
 import { Gallery } from './pages/Galllery/Gallery';
 function App() {
   return (
     <>
+      <Helmet>
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content="Celebration Chapters" />
+      </Helmet>
       <div className="App">
         <Navbar />
         <Routes>

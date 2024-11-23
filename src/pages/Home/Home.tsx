@@ -7,6 +7,7 @@ import EmblaCarousel from '../../components/Embla/js/EmblaCarousel';
 import { HomePageData, HomepageVideo } from '../../types/pages/Memories.types';
 import { Spinner } from '../../components/Spinner';
 import CelebrationChapter from '../../components/BookACall';
+import { Helmet } from 'react-helmet';
 
 export const Home = () => {
   const { data, loading } = useQuery<Data>(QuoteQuery);
@@ -16,6 +17,29 @@ export const Home = () => {
   if (loading || videoloading || !data || !videoData) return <Spinner />;
   return (
     <>
+      <Helmet>
+        <title>Celebration Chapters</title>
+        <meta
+          property="og:title"
+          content="Celebration Chapters - Films & Photos for Your Special Moments"
+        />
+        <meta
+          property="og:description"
+          content="Capture your most cherished moments with Celebration Chapters. Explore our stunning photos and heartfelt films today!"
+        />
+        <meta
+          property="og:url"
+          content="https://www.celebrationchapters.com/"
+        />
+        <meta
+          property="og:image"
+          content="https://images.ctfassets.net/waibrswxyq0p/3RdXYtqHGWLEGox3EM7fLQ/50aa517250d9da1819f6c43f9bea7a1f/CCP-343.jpg"
+        />
+        <meta
+          property="og:image:alt"
+          content="A stunning celebration captured by Celebration Chapters"
+        />
+      </Helmet>
       <main className="-mt-20">
         {/* <Carousel /> */}
         <EmblaCarousel
